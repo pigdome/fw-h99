@@ -16,7 +16,7 @@ $yeekee = YeekeeSearch::find()->where(['id' => Yii::$app->request->get('id')])->
                         <div class="row p-0 m-0">
                             <div class="col-7 py-1 bg-dark d-flex align-items-center">
                                 <img src="<?= Yii::getAlias('@web/version6/images/logo-demolotto.png') ?>"
-                                     alt="HUAY178" width="150" class="align-middle">
+                                     alt="HUAY99" width="150" class="align-middle">
                             </div>
                             <div class="col-5 py-1 pl-0 bg-dark text-white d-flex justify-content-end align-items-center">
                                 <h4 class="hbill mb-0">ใบสั่งซื้อ</h4>

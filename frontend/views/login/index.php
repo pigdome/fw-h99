@@ -67,8 +67,8 @@ $this->registerJs($localStorageJs);
                                 <div class="logoindex"><img
                                             src="<?= Yii::getAlias('@web/version6/images/demolotto.png') ?>"
                                             style="height: 60px;"
-                                            alt="Huay178"
-                                            title="Huay178"/></div>
+                                            alt="Huay99"
+                                            title="Huay99"/></div>
                             </div><br>
                         </div>
                         <div class="col-sm-12 col-md-8 col-lg-9">

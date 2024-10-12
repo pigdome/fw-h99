@@ -14,7 +14,7 @@ use yii\helpers\Url;
                     <h5 class="mb-0">
                         <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
                                 data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                            วิธี จัดการเลขชุด แทงหวยออนไลน์ | HUAY178
+                            วิธี จัดการเลขชุด แทงหวยออนไลน์ | HUAY99
                         </button>
                     </h5>
                 </div>
@@ -31,7 +31,7 @@ use yii\helpers\Url;
                     <h5 class="mb-0">
                         <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
                                 data-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
-                            วิธีการดึงโพย HUAY178 | เว็บแทงหวยออนไลน์
+                            วิธีการดึงโพย HUAY99 | เว็บแทงหวยออนไลน์
                         </button>
                     </h5>
                 </div>
@@ -48,7 +48,7 @@ use yii\helpers\Url;
                     <h5 class="mb-0">
                         <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
                                 data-target="#collapse6" aria-expanded="false" aria-controls="collapse6">
-                            วิธีการติดต่อทีมงาน HUAY178
+                            วิธีการติดต่อทีมงาน HUAY99
                         </button>
                     </h5>
                 </div>
@@ -65,7 +65,7 @@ use yii\helpers\Url;
                     <h5 class="mb-0">
                         <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
                                 data-target="#collapse7" aria-expanded="false" aria-controls="collapse7">
-                            วิธีถอนเงิน HUAY178
+                            วิธีถอนเงิน HUAY99
                         </button>
                     </h5>
                 </div>

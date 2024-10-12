@@ -125,7 +125,7 @@ AppAssetGuest::register ( $this );
 			<div class="copyright-01 md-text-center">
 				<div class="container">
 					<p class="copyright-01__copy">2024 &copy; Copyright
-						HUAY178. All rights Reserved.</p>
+						HUAY99. All rights Reserved.</p>
 				</div>
 			</div>
 			<!-- End / copyright-01 -->

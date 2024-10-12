@@ -15,7 +15,7 @@ use yii\helpers\Url;
                         <ul id="marquee1" class="marquee">
                             <li class="marquee-showing" style="top: 0px; left: 0px;">
                                 &nbsp;ยินดีต้อนรับทุกท่านเข้าสู่เว็บ
-                                Huay178.online เว็บหวยออนไลน์ที่มาแรงที่สุดในตอนนี้
+                                Huay99.online เว็บหวยออนไลน์ที่มาแรงที่สุดในตอนนี้
                             </li>
                         </ul>
                     </div>
@@ -31,7 +31,7 @@ use yii\helpers\Url;
                         <div class="logoindex text-center">
                             <a href="#">
                                 <img src="<?= Yii::getAlias('@web/version6/images/demolotto.png') ?>"
-                                    class="position-relative" style="top:-10px" alt="HUAY178" title="HUAY178"></a>
+                                    class="position-relative" style="top:-10px" alt="HUAY99" title="HUAY99"></a>
                         </div>
                     </div>
                 </div> 

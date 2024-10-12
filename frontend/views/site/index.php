@@ -30,7 +30,7 @@ $this->registerCss ( $css );
 						<div class="container">
 							<h1 class="hero__title">ด่วน! สมัครสมาชิกวันนี้</h1>
 							<p class="hero__desc">เน้นสร้างรายได้ให้ตัวเอง รับคอมมิชชั่น 5 %</p>
-							<p class="hero__desc">HUAY178</p>
+							<p class="hero__desc">HUAY99</p>
 							<!-- btn -->
 
 							<a class="btn btn-primary" href="<?= Url::toRoute(['user/registration/register'])?>">สมัครสมาชิก </a>&ensp; &ensp;

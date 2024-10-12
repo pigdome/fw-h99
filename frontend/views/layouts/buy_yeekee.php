@@ -22,7 +22,7 @@ $this->registerJsVar('url_thai_shared', \yii\helpers\Url::to(['yeekee/result']))
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
         <link rel="icon" href="<?= Yii::getAlias('@web/version6/images/logo-symbol.jpg') ?>" type="image/x-icon">
-        <title>HUAY178</title>
+        <title>HUAY99</title>
         <?php $this->head() ?>
         <?= Html::csrfMetaTags() ?>
     </head>

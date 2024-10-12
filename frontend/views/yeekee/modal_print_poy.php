@@ -74,7 +74,7 @@ use yii\helpers\Url;
                             <div class="col-12 mt-0 mb-2">
                                 <div class="alert alert-success p-1 px-2 mb-1 d-flex justify-content-between align-items-center">
                                     <span><i class="fas fa-user-check"></i> <?= Yii::$app->user->identity->username ?></span>
-                                    <span class="badge badge-secondary">© HUAY178</span>
+                                    <span class="badge badge-secondary">© HUAY99</span>
                                 </div>
                             </div>
                         </div>

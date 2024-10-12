@@ -60,13 +60,13 @@ $this->registerJs($js);
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta property="og:url" content="<?= Url::base('https') ?>/frontend/web/user/login" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="HUAY178" />
-    <meta property="og:description" content="HUAY99 เว็บหวยออนไลน์ที่ดีที่สุด ของเมืองไทย จ่ายเร็ว การเงินมั่นคง ลุ้นแทงหวยลาวชุด หวยรัฐบาล หวยเวียดนามและอื่นๆอีกมากมาย บริการ 24 ชม." />
+    <meta property="og:title" content="HUAY99" />
+    <meta property="og:description" content="หวย99 ออนไลน์ เว็บซื้อหวยออนไลน์ เรทจ่ายที่สุด สมัครง่ายๆ เว็บจ่ายจริง 100% ได้เงินแน่นอน แอดมินตอบไว ทันใจ ปลอดภัย 100%" />
     <meta property="og:image" content="<?= Url::base('https') ?>/img/fav.png" />
     <link rel="icon" href="<?= Url::base('https') ?>/img/fav.png" type="image/x-icon">
 
     <link rel="icon" href="<?= Yii::getAlias('@web/version6/images/logo-symbol.jpg') ?>" type="image/x-icon">
-    <title>HUAY178</title>
+    <title>HUAY99</title>
     <?php $this->head() ?>
     <?= Html::csrfMetaTags() ?>
 </head>

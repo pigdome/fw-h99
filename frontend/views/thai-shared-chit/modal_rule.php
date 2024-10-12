@@ -9,7 +9,7 @@
             </div>
             <div class="modal-body">
                 <h3><strong><?= $thaiSharedGame->title ?></strong></h3>
-                <p><?= $thaiSharedGame->title ?> กติกาการเเทง&nbsp;<strong>HUAY178</strong></p>
+                <p><?= $thaiSharedGame->title ?> กติกาการเเทง&nbsp;<strong>HUAY99</strong></p>
                 <?= $thaiSharedGame->description ?>
             </div>
             <div class="modal-footer">
