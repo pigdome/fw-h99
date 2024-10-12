@@ -1,0 +1,898 @@
+2024-10-09 16:31:58 [171.5.243.216][143][81nvnvqri4cqschjfuahhk8vpk][info][credit] action Id: 2
+2024-10-09 16:31:58 [171.5.243.216][143][81nvnvqri4cqschjfuahhk8vpk][info][credit] user Id: 143
+2024-10-09 16:31:58 [171.5.243.216][143][81nvnvqri4cqschjfuahhk8vpk][info][credit] amount: 40
+2024-10-09 16:31:58 [171.5.243.216][143][81nvnvqri4cqschjfuahhk8vpk][info][credit] current Credit before Update: 8570.00
+2024-10-09 16:31:58 [171.5.243.216][143][81nvnvqri4cqschjfuahhk8vpk][info][credit] credit transection Id: 170
+2024-10-09 16:31:58 [171.5.243.216][143][81nvnvqri4cqschjfuahhk8vpk][info][credit] current Credit after Update: 8530
+2024-10-09 16:31:58 [171.5.243.216][143][81nvnvqri4cqschjfuahhk8vpk][info][application] $_GET = []
+
+$_POST = [
+    'poy' => '{\"bet_id\":14804,\"poy_list\":[{\"option\":\"teng_bon_2\",\"number\":\"59\",\"price\":\"5\",\"multiply\":90,\"is_duplicate\":false,\"last_add_num\":2},{\"option\":\"teng_bon_2\",\"number\":\"78\",\"price\":\"5\",\"multiply\":90,\"is_duplicate\":false,\"last_add_num\":3},{\"option\":\"teng_bon_2\",\"number\":\"87\",\"price\":\"5\",\"multiply\":90,\"is_duplicate\":false,\"last_add_num\":4},{\"option\":\"teng_bon_2\",\"number\":\"95\",\"price\":\"5\",\"multiply\":90,\"is_duplicate\":false,\"last_add_num\":1},{\"option\":\"teng_lang_2\",\"number\":\"59\",\"price\":\"5\",\"multiply\":90,\"is_duplicate\":false,\"last_add_num\":2},{\"option\":\"teng_lang_2\",\"number\":\"78\",\"price\":\"5\",\"multiply\":90,\"is_duplicate\":false,\"last_add_num\":3},{\"option\":\"teng_lang_2\",\"number\":\"87\",\"price\":\"5\",\"multiply\":90,\"is_duplicate\":false,\"last_add_num\":4},{\"option\":\"teng_lang_2\",\"number\":\"95\",\"price\":\"5\",\"multiply\":90,\"is_duplicate\":false,\"last_add_num\":1}]}'
+    '_csrf' => 'STQng0nupentR095BpZj-fcB2VXSjSDoqpHpjRlfFlsBfUy2AIDzvbU0Cihn2FGbz0PqFJ_1YqTC19nnaStgaQ=='
+]
+
+$_FILES = []
+
+$_COOKIE = [
+    '_csrf-backend' => 'e242f001b6dd73ceac7411c67726e00c4a7bd0f111e3d71fc000221c3a67457da:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"4zkFm9oj4IDVK6c698fcE27q3KnSOkVA\";}'
+    'PHPSESSID' => '81nvnvqri4cqschjfuahhk8vpk'
+    '_csrf-frontend' => '052a0a2794b24429e335edd10b282368437cf78b210074c0deaa243de002c80ea:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"HIk5InVTXsEQaN2b8B3AMxBLhF0jptv2\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'https://huay99.online/thai-shared-chit/index'
+    '__id' => 143
+    '__expire' => 1728473518
+]
+
+$_SERVER = [
+    'PHP_FCGI_CHILDREN' => '0'
+    'PWD' => '/usr/local/safe-bin'
+    'PHP_FCGI_MAX_REQUESTS' => '0'
+    'SHLVL' => '0'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin'
+    'HTTP_CONNECTION' => 'close'
+    'SCRIPT_NAME' => '/frontend/web/index.php'
+    'REQUEST_URI' => '/api-poy/buy'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'POST'
+    'SERVER_PROTOCOL' => 'HTTP/2.0'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/api-poy/buy'
+    'REMOTE_PORT' => '1028'
+    'SCRIPT_FILENAME' => '/home/thaengla/domains/huay99.online/private_html/frontend/web/index.php'
+    'SERVER_ADMIN' => 'webmaster@huay99.online'
+    'CONTEXT_DOCUMENT_ROOT' => '/home/thaengla/domains/huay99.online/private_html'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'https'
+    'DOCUMENT_ROOT' => '/home/thaengla/domains/huay99.online/private_html'
+    'REMOTE_ADDR' => '171.5.243.216'
+    'SERVER_PORT' => '443'
+    'SERVER_ADDR' => '64.235.45.220'
+    'SERVER_NAME' => 'huay99.online'
+    'SERVER_SOFTWARE' => 'Apache/2'
+    'SERVER_SIGNATURE' => ''
+    'HTTP_HOST' => 'huay99.online'
+    'HTTP_PRIORITY' => 'u=1, i'
+    'HTTP_COOKIE' => '_csrf-backend=e242f001b6dd73ceac7411c67726e00c4a7bd0f111e3d71fc000221c3a67457da%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%224zkFm9oj4IDVK6c698fcE27q3KnSOkVA%22%3B%7D; PHPSESSID=81nvnvqri4cqschjfuahhk8vpk; _csrf-frontend=052a0a2794b24429e335edd10b282368437cf78b210074c0deaa243de002c80ea%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22HIk5InVTXsEQaN2b8B3AMxBLhF0jptv2%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'th-TH,th;q=0.9'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_REFERER' => 'https://huay99.online/thai-shared-chit/play?id=14804'
+    'HTTP_SEC_FETCH_DEST' => 'empty'
+    'HTTP_SEC_FETCH_MODE' => 'cors'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_ORIGIN' => 'https://huay99.online'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36'
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA' => '\"Google Chrome\";v=\"129\", \"Not=A?Brand\";v=\"8\", \"Chromium\";v=\"129\"'
+    'HTTP_X_CSRF_TOKEN' => 'STQng0nupentR095BpZj-fcB2VXSjSDoqpHpjRlfFlsBfUy2AIDzvbU0Cihn2FGbz0PqFJ_1YqTC19nnaStgaQ=='
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'CONTENT_LENGTH' => '1484'
+    'H2_STREAM_TAG' => '290-3'
+    'H2_STREAM_ID' => '3'
+    'H2_PUSHED_ON' => ''
+    'H2_PUSHED' => ''
+    'H2_PUSH' => 'off'
+    'H2PUSH' => 'off'
+    'HTTP2' => 'on'
+    'SSL_TLS_SNI' => 'huay99.online'
+    'HTTPS' => 'on'
+    'UNIQUE_ID' => 'ZwZNjoE214bOdwhswjbu8QABNhM'
+    'REDIRECT_STATUS' => '200'
+    'REDIRECT_H2_STREAM_TAG' => '290-3'
+    'REDIRECT_H2_STREAM_ID' => '3'
+    'REDIRECT_H2_PUSHED_ON' => ''
+    'REDIRECT_H2_PUSHED' => ''
+    'REDIRECT_H2_PUSH' => 'off'
+    'REDIRECT_H2PUSH' => 'off'
+    'REDIRECT_HTTP2' => 'on'
+    'REDIRECT_SSL_TLS_SNI' => 'huay99.online'
+    'REDIRECT_HTTPS' => 'on'
+    'REDIRECT_UNIQUE_ID' => 'ZwZNjoE214bOdwhswjbu8QABNhM'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1728466318.8103
+    'REQUEST_TIME' => 1728466318
+]
+2024-10-09 16:34:54 [171.5.243.216][143][81nvnvqri4cqschjfuahhk8vpk][info][credit] action Id: 2
+2024-10-09 16:34:54 [171.5.243.216][143][81nvnvqri4cqschjfuahhk8vpk][info][credit] user Id: 143
+2024-10-09 16:34:54 [171.5.243.216][143][81nvnvqri4cqschjfuahhk8vpk][info][credit] amount: 78
+2024-10-09 16:34:54 [171.5.243.216][143][81nvnvqri4cqschjfuahhk8vpk][info][credit] current Credit before Update: 8530.00
+2024-10-09 16:34:54 [171.5.243.216][143][81nvnvqri4cqschjfuahhk8vpk][info][credit] credit transection Id: 171
+2024-10-09 16:34:54 [171.5.243.216][143][81nvnvqri4cqschjfuahhk8vpk][info][credit] current Credit after Update: 8452
+2024-10-09 16:34:53 [171.5.243.216][143][81nvnvqri4cqschjfuahhk8vpk][info][application] $_GET = []
+
+$_POST = [
+    'poy' => '{\"bet_id\":14804,\"poy_list\":[{\"option\":\"teng_bon_2\",\"number\":\"45\",\"price\":\"5\",\"multiply\":90,\"is_duplicate\":false,\"last_add_num\":3},{\"option\":\"teng_bon_2\",\"number\":\"49\",\"price\":\"5\",\"multiply\":90,\"is_duplicate\":false,\"last_add_num\":6},{\"option\":\"teng_bon_2\",\"number\":\"54\",\"price\":\"5\",\"multiply\":90,\"is_duplicate\":false,\"last_add_num\":4},{\"option\":\"teng_bon_2\",\"number\":\"59\",\"price\":\"5\",\"multiply\":90,\"is_duplicate\":false,\"last_add_num\":2},{\"option\":\"teng_bon_2\",\"number\":\"94\",\"price\":\"5\",\"multiply\":90,\"is_duplicate\":false,\"last_add_num\":5},{\"option\":\"teng_bon_2\",\"number\":\"95\",\"price\":\"5\",\"multiply\":90,\"is_duplicate\":false,\"last_add_num\":1},{\"option\":\"teng_bon_3\",\"number\":\"459\",\"price\":\"3\",\"multiply\":899,\"is_duplicate\":false,\"last_add_num\":7},{\"option\":\"teng_bon_3\",\"number\":\"495\",\"price\":\"3\",\"multiply\":899,\"is_duplicate\":false,\"last_add_num\":7},{\"option\":\"teng_bon_3\",\"number\":\"549\",\"price\":\"3\",\"multiply\":899,\"is_duplicate\":false,\"last_add_num\":7},{\"option\":\"teng_bon_3\",\"number\":\"594\",\"price\":\"3\",\"multiply\":899,\"is_duplicate\":false,\"last_add_num\":7},{\"option\":\"teng_bon_3\",\"number\":\"945\",\"price\":\"3\",\"multiply\":899,\"is_duplicate\":false,\"last_add_num\":7},{\"option\":\"teng_bon_3\",\"number\":\"954\",\"price\":\"3\",\"multiply\":899,\"is_duplicate\":false,\"last_add_num\":7},{\"option\":\"teng_lang_2\",\"number\":\"45\",\"price\":\"5\",\"multiply\":90,\"is_duplicate\":false,\"last_add_num\":3},{\"option\":\"teng_lang_2\",\"number\":\"49\",\"price\":\"5\",\"multiply\":90,\"is_duplicate\":false,\"last_add_num\":6},{\"option\":\"teng_lang_2\",\"number\":\"54\",\"price\":\"5\",\"multiply\":90,\"is_duplicate\":false,\"last_add_num\":4},{\"option\":\"teng_lang_2\",\"number\":\"59\",\"price\":\"5\",\"multiply\":90,\"is_duplicate\":false,\"last_add_num\":2},{\"option\":\"teng_lang_2\",\"number\":\"94\",\"price\":\"5\",\"multiply\":90,\"is_duplicate\":false,\"last_add_num\":5},{\"option\":\"teng_lang_2\",\"number\":\"95\",\"price\":\"5\",\"multiply\":90,\"is_duplicate\":false,\"last_add_num\":1}]}'
+    '_csrf' => 'AW2ZwnWGGT3kZWu6jek0zV6c4htJ7TaVA_0rNxXlpYhJJPL3POhPabwWLuvspwavZt7RWgSVdNlruxtdZZHTug=='
+]
+
+$_FILES = []
+
+$_COOKIE = [
+    '_csrf-backend' => 'e242f001b6dd73ceac7411c67726e00c4a7bd0f111e3d71fc000221c3a67457da:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"4zkFm9oj4IDVK6c698fcE27q3KnSOkVA\";}'
+    'PHPSESSID' => '81nvnvqri4cqschjfuahhk8vpk'
+    '_csrf-frontend' => '052a0a2794b24429e335edd10b282368437cf78b210074c0deaa243de002c80ea:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"HIk5InVTXsEQaN2b8B3AMxBLhF0jptv2\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'https://huay99.online/thai-shared-chit/index'
+    '__id' => 143
+    '__expire' => 1728473693
+]
+
+$_SERVER = [
+    'PHP_FCGI_CHILDREN' => '0'
+    'PWD' => '/usr/local/safe-bin'
+    'PHP_FCGI_MAX_REQUESTS' => '0'
+    'SHLVL' => '0'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin'
+    'HTTP_CONNECTION' => 'close'
+    'SCRIPT_NAME' => '/frontend/web/index.php'
+    'REQUEST_URI' => '/api-poy/buy'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'POST'
+    'SERVER_PROTOCOL' => 'HTTP/2.0'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/api-poy/buy'
+    'REMOTE_PORT' => '54969'
+    'SCRIPT_FILENAME' => '/home/thaengla/domains/huay99.online/private_html/frontend/web/index.php'
+    'SERVER_ADMIN' => 'webmaster@huay99.online'
+    'CONTEXT_DOCUMENT_ROOT' => '/home/thaengla/domains/huay99.online/private_html'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'https'
+    'DOCUMENT_ROOT' => '/home/thaengla/domains/huay99.online/private_html'
+    'REMOTE_ADDR' => '171.5.243.216'
+    'SERVER_PORT' => '443'
+    'SERVER_ADDR' => '64.235.45.220'
+    'SERVER_NAME' => 'huay99.online'
+    'SERVER_SOFTWARE' => 'Apache/2'
+    'SERVER_SIGNATURE' => ''
+    'HTTP_HOST' => 'huay99.online'
+    'HTTP_PRIORITY' => 'u=1, i'
+    'HTTP_COOKIE' => '_csrf-backend=e242f001b6dd73ceac7411c67726e00c4a7bd0f111e3d71fc000221c3a67457da%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%224zkFm9oj4IDVK6c698fcE27q3KnSOkVA%22%3B%7D; PHPSESSID=81nvnvqri4cqschjfuahhk8vpk; _csrf-frontend=052a0a2794b24429e335edd10b282368437cf78b210074c0deaa243de002c80ea%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22HIk5InVTXsEQaN2b8B3AMxBLhF0jptv2%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'th-TH,th;q=0.9'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_REFERER' => 'https://huay99.online/thai-shared-chit/play?id=14804'
+    'HTTP_SEC_FETCH_DEST' => 'empty'
+    'HTTP_SEC_FETCH_MODE' => 'cors'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_ORIGIN' => 'https://huay99.online'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36'
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA' => '\"Google Chrome\";v=\"129\", \"Not=A?Brand\";v=\"8\", \"Chromium\";v=\"129\"'
+    'HTTP_X_CSRF_TOKEN' => 'AW2ZwnWGGT3kZWu6jek0zV6c4htJ7TaVA_0rNxXlpYhJJPL3POhPabwWLuvspwavZt7RWgSVdNlruxtdZZHTug=='
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'CONTENT_LENGTH' => '3158'
+    'H2_STREAM_TAG' => '270-1'
+    'H2_STREAM_ID' => '1'
+    'H2_PUSHED_ON' => ''
+    'H2_PUSHED' => ''
+    'H2_PUSH' => 'off'
+    'H2PUSH' => 'off'
+    'HTTP2' => 'on'
+    'SSL_TLS_SNI' => 'huay99.online'
+    'HTTPS' => 'on'
+    'UNIQUE_ID' => 'ZwZOPYE214bOdwhswjb1-wABDgU'
+    'REDIRECT_STATUS' => '200'
+    'REDIRECT_H2_STREAM_TAG' => '270-1'
+    'REDIRECT_H2_STREAM_ID' => '1'
+    'REDIRECT_H2_PUSHED_ON' => ''
+    'REDIRECT_H2_PUSHED' => ''
+    'REDIRECT_H2_PUSH' => 'off'
+    'REDIRECT_H2PUSH' => 'off'
+    'REDIRECT_HTTP2' => 'on'
+    'REDIRECT_SSL_TLS_SNI' => 'huay99.online'
+    'REDIRECT_HTTPS' => 'on'
+    'REDIRECT_UNIQUE_ID' => 'ZwZOPYE214bOdwhswjb1-wABDgU'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1728466493.8289
+    'REQUEST_TIME' => 1728466493
+]
+2024-10-09 17:48:38 [171.5.243.216][143][hqsdv08f9mk82hijk5i7n0nkmi][info][credit] action Id: 2
+2024-10-09 17:48:38 [171.5.243.216][143][hqsdv08f9mk82hijk5i7n0nkmi][info][credit] user Id: 143
+2024-10-09 17:48:38 [171.5.243.216][143][hqsdv08f9mk82hijk5i7n0nkmi][info][credit] amount: 470
+2024-10-09 17:48:38 [171.5.243.216][143][hqsdv08f9mk82hijk5i7n0nkmi][info][credit] current Credit before Update: 8452.00
+2024-10-09 17:48:38 [171.5.243.216][143][hqsdv08f9mk82hijk5i7n0nkmi][info][credit] credit transection Id: 172
+2024-10-09 17:48:38 [171.5.243.216][143][hqsdv08f9mk82hijk5i7n0nkmi][info][credit] current Credit after Update: 7982
+2024-10-09 17:48:38 [171.5.243.216][143][hqsdv08f9mk82hijk5i7n0nkmi][info][application] $_GET = []
+
+$_POST = [
+    'poy' => '{\"bet_id\":14804,\"poy_list\":[{\"option\":\"teng_bon_2\",\"number\":\"09\",\"price\":\"50\",\"multiply\":90,\"is_duplicate\":false,\"last_add_num\":9},{\"option\":\"teng_bon_2\",\"number\":\"90\",\"price\":\"50\",\"multiply\":90,\"is_duplicate\":false,\"last_add_num\":8},{\"option\":\"teng_bon_3\",\"number\":\"228\",\"price\":\"50\",\"multiply\":998,\"is_duplicate\":false,\"last_add_num\":1},{\"option\":\"teng_bon_3\",\"number\":\"282\",\"price\":\"50\",\"multiply\":998,\"is_duplicate\":false,\"last_add_num\":1},{\"option\":\"teng_bon_3\",\"number\":\"509\",\"price\":\"20\",\"multiply\":899,\"is_duplicate\":false,\"last_add_num\":6},{\"option\":\"teng_bon_3\",\"number\":\"590\",\"price\":\"20\",\"multiply\":899,\"is_duplicate\":false,\"last_add_num\":7},{\"option\":\"teng_bon_3\",\"number\":\"822\",\"price\":\"50\",\"multiply\":998,\"is_duplicate\":false,\"last_add_num\":1},{\"option\":\"teng_bon_3\",\"number\":\"950\",\"price\":\"20\",\"multiply\":899,\"is_duplicate\":false,\"last_add_num\":5},{\"option\":\"teng_lang_2\",\"number\":\"09\",\"price\":\"50\",\"multiply\":90,\"is_duplicate\":false,\"last_add_num\":9},{\"option\":\"teng_lang_2\",\"number\":\"90\",\"price\":\"50\",\"multiply\":90,\"is_duplicate\":false,\"last_add_num\":8},{\"option\":\"tode_3\",\"number\":\"509\",\"price\":\"20\",\"multiply\":120,\"is_duplicate\":false,\"last_add_num\":6},{\"option\":\"tode_3\",\"number\":\"590\",\"price\":\"20\",\"multiply\":120,\"is_duplicate\":false,\"last_add_num\":7},{\"option\":\"tode_3\",\"number\":\"950\",\"price\":\"20\",\"multiply\":120,\"is_duplicate\":false,\"last_add_num\":5}]}'
+    '_csrf' => 'Pr7hX9cEBqz_ibX6YbjR5a1VE0slV9LpcLKZvqk9xmdZy5kvvjBuzZrdwL4J95vWlRd4IVYZo4QV9cOJxGepBQ=='
+]
+
+$_FILES = []
+
+$_COOKIE = [
+    '_csrf-backend' => 'e242f001b6dd73ceac7411c67726e00c4a7bd0f111e3d71fc000221c3a67457da:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"4zkFm9oj4IDVK6c698fcE27q3KnSOkVA\";}'
+    'PHPSESSID' => 'hqsdv08f9mk82hijk5i7n0nkmi'
+    '_csrf-frontend' => '97624ad9e36995a9bb0233f4cbc222c1b8373b5b56b4201bff7c61aaef08a97fa:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"guxpi4haeTuDhOJ38BkjsNqmeGZ7mZob\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'https://huay99.online/site/home'
+    '__id' => 143
+    '__expire' => 1728478118
+]
+
+$_SERVER = [
+    'PHP_FCGI_CHILDREN' => '0'
+    'PWD' => '/usr/local/safe-bin'
+    'PHP_FCGI_MAX_REQUESTS' => '0'
+    'SHLVL' => '0'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin'
+    'HTTP_CONNECTION' => 'close'
+    'SCRIPT_NAME' => '/frontend/web/index.php'
+    'REQUEST_URI' => '/api-poy/buy'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'POST'
+    'SERVER_PROTOCOL' => 'HTTP/2.0'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/api-poy/buy'
+    'REMOTE_PORT' => '55921'
+    'SCRIPT_FILENAME' => '/home/thaengla/domains/huay99.online/private_html/frontend/web/index.php'
+    'SERVER_ADMIN' => 'webmaster@huay99.online'
+    'CONTEXT_DOCUMENT_ROOT' => '/home/thaengla/domains/huay99.online/private_html'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'https'
+    'DOCUMENT_ROOT' => '/home/thaengla/domains/huay99.online/private_html'
+    'REMOTE_ADDR' => '171.5.243.216'
+    'SERVER_PORT' => '443'
+    'SERVER_ADDR' => '64.235.45.220'
+    'SERVER_NAME' => 'huay99.online'
+    'SERVER_SOFTWARE' => 'Apache/2'
+    'SERVER_SIGNATURE' => ''
+    'HTTP_HOST' => 'huay99.online'
+    'HTTP_PRIORITY' => 'u=1, i'
+    'HTTP_COOKIE' => '_csrf-backend=e242f001b6dd73ceac7411c67726e00c4a7bd0f111e3d71fc000221c3a67457da%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%224zkFm9oj4IDVK6c698fcE27q3KnSOkVA%22%3B%7D; PHPSESSID=hqsdv08f9mk82hijk5i7n0nkmi; _csrf-frontend=97624ad9e36995a9bb0233f4cbc222c1b8373b5b56b4201bff7c61aaef08a97fa%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22guxpi4haeTuDhOJ38BkjsNqmeGZ7mZob%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'th-TH,th;q=0.9'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_REFERER' => 'https://huay99.online/thai-shared-chit/play?id=14804'
+    'HTTP_SEC_FETCH_DEST' => 'empty'
+    'HTTP_SEC_FETCH_MODE' => 'cors'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_ORIGIN' => 'https://huay99.online'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36'
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA' => '\"Google Chrome\";v=\"129\", \"Not=A?Brand\";v=\"8\", \"Chromium\";v=\"129\"'
+    'HTTP_X_CSRF_TOKEN' => 'Pr7hX9cEBqz_ibX6YbjR5a1VE0slV9LpcLKZvqk9xmdZy5kvvjBuzZrdwL4J95vWlRd4IVYZo4QV9cOJxGepBQ=='
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'CONTENT_LENGTH' => '2331'
+    'H2_STREAM_TAG' => '380-1'
+    'H2_STREAM_ID' => '1'
+    'H2_PUSHED_ON' => ''
+    'H2_PUSHED' => ''
+    'H2_PUSH' => 'off'
+    'H2PUSH' => 'off'
+    'HTTP2' => 'on'
+    'SSL_TLS_SNI' => 'huay99.online'
+    'HTTPS' => 'on'
+    'UNIQUE_ID' => 'ZwZfhqWl1eV_yI6zm7KrUQABfAk'
+    'REDIRECT_STATUS' => '200'
+    'REDIRECT_H2_STREAM_TAG' => '380-1'
+    'REDIRECT_H2_STREAM_ID' => '1'
+    'REDIRECT_H2_PUSHED_ON' => ''
+    'REDIRECT_H2_PUSHED' => ''
+    'REDIRECT_H2_PUSH' => 'off'
+    'REDIRECT_H2PUSH' => 'off'
+    'REDIRECT_HTTP2' => 'on'
+    'REDIRECT_SSL_TLS_SNI' => 'huay99.online'
+    'REDIRECT_HTTPS' => 'on'
+    'REDIRECT_UNIQUE_ID' => 'ZwZfhqWl1eV_yI6zm7KrUQABfAk'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1728470918.077
+    'REQUEST_TIME' => 1728470918
+]
+2024-10-09 18:23:39 [184.22.36.67][142][cjm6brvogebu6n3o5pmi0irfg7][info][credit] action Id: 2
+2024-10-09 18:23:39 [184.22.36.67][142][cjm6brvogebu6n3o5pmi0irfg7][info][credit] user Id: 142
+2024-10-09 18:23:39 [184.22.36.67][142][cjm6brvogebu6n3o5pmi0irfg7][info][credit] amount: 120
+2024-10-09 18:23:39 [184.22.36.67][142][cjm6brvogebu6n3o5pmi0irfg7][info][credit] current Credit before Update: 9220.00
+2024-10-09 18:23:39 [184.22.36.67][142][cjm6brvogebu6n3o5pmi0irfg7][info][credit] credit transection Id: 173
+2024-10-09 18:23:39 [184.22.36.67][142][cjm6brvogebu6n3o5pmi0irfg7][info][credit] current Credit after Update: 9100
+2024-10-09 18:23:39 [184.22.36.67][142][cjm6brvogebu6n3o5pmi0irfg7][info][application] $_GET = []
+
+$_POST = [
+    'poy' => '{\"bet_id\":14804,\"poy_list\":[{\"option\":\"teng_bon_2\",\"number\":\"08\",\"price\":20,\"multiply\":90,\"is_duplicate\":false,\"last_add_num\":2},{\"option\":\"teng_bon_2\",\"number\":\"23\",\"price\":20,\"multiply\":90,\"is_duplicate\":false,\"last_add_num\":1},{\"option\":\"teng_bon_2\",\"number\":\"32\",\"price\":20,\"multiply\":90,\"is_duplicate\":false,\"last_add_num\":1},{\"option\":\"teng_lang_2\",\"number\":\"08\",\"price\":20,\"multiply\":90,\"is_duplicate\":false,\"last_add_num\":2},{\"option\":\"teng_lang_2\",\"number\":\"23\",\"price\":20,\"multiply\":90,\"is_duplicate\":false,\"last_add_num\":1},{\"option\":\"teng_lang_2\",\"number\":\"32\",\"price\":20,\"multiply\":90,\"is_duplicate\":false,\"last_add_num\":1}]}'
+    '_csrf' => 'poHA0gdRC4BpvXZXlOxg7YT2NBkODbHuuAvfzv6dUAX585-xQDBY1QHqED7xpiPV96RgYEhc94LLO7yItd48aw=='
+]
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'cjm6brvogebu6n3o5pmi0irfg7'
+    '_csrf-frontend' => '743e631bfc6d941fe245f1daac98d30db2a7965785486fb4dfff55b1a0ec8825a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"_r_cGaSUhWfieJC8sRTyFQFls0cFKCln\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'https://huay99.online/site/home'
+    '__id' => 142
+    '__expire' => 1728480219
+]
+
+$_SERVER = [
+    'PHP_FCGI_CHILDREN' => '0'
+    'PWD' => '/usr/local/safe-bin'
+    'PHP_FCGI_MAX_REQUESTS' => '0'
+    'SHLVL' => '0'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin'
+    'HTTP_CONNECTION' => 'close'
+    'SCRIPT_NAME' => '/frontend/web/index.php'
+    'REQUEST_URI' => '/api-poy/buy'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'POST'
+    'SERVER_PROTOCOL' => 'HTTP/2.0'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/api-poy/buy'
+    'REMOTE_PORT' => '3636'
+    'SCRIPT_FILENAME' => '/home/thaengla/domains/huay99.online/private_html/frontend/web/index.php'
+    'SERVER_ADMIN' => 'webmaster@huay99.online'
+    'CONTEXT_DOCUMENT_ROOT' => '/home/thaengla/domains/huay99.online/private_html'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'https'
+    'DOCUMENT_ROOT' => '/home/thaengla/domains/huay99.online/private_html'
+    'REMOTE_ADDR' => '184.22.36.67'
+    'SERVER_PORT' => '443'
+    'SERVER_ADDR' => '64.235.45.220'
+    'SERVER_NAME' => 'huay99.online'
+    'SERVER_SOFTWARE' => 'Apache/2'
+    'SERVER_SIGNATURE' => ''
+    'HTTP_HOST' => 'huay99.online'
+    'HTTP_PRIORITY' => 'u=1, i'
+    'HTTP_COOKIE' => 'PHPSESSID=cjm6brvogebu6n3o5pmi0irfg7; _csrf-frontend=743e631bfc6d941fe245f1daac98d30db2a7965785486fb4dfff55b1a0ec8825a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22_r_cGaSUhWfieJC8sRTyFQFls0cFKCln%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_REFERER' => 'https://huay99.online/thai-shared-chit/play?id=14804'
+    'HTTP_SEC_FETCH_DEST' => 'empty'
+    'HTTP_SEC_FETCH_MODE' => 'cors'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_ORIGIN' => 'https://huay99.online'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36'
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA' => '\"Google Chrome\";v=\"129\", \"Not=A?Brand\";v=\"8\", \"Chromium\";v=\"129\"'
+    'HTTP_X_CSRF_TOKEN' => 'poHA0gdRC4BpvXZXlOxg7YT2NBkODbHuuAvfzv6dUAX585-xQDBY1QHqED7xpiPV96RgYEhc94LLO7yItd48aw=='
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'CONTENT_LENGTH' => '1121'
+    'H2_STREAM_TAG' => '300-1'
+    'H2_STREAM_ID' => '1'
+    'H2_PUSHED_ON' => ''
+    'H2_PUSHED' => ''
+    'H2_PUSH' => 'off'
+    'H2PUSH' => 'off'
+    'HTTP2' => 'on'
+    'SSL_TLS_SNI' => 'huay99.online'
+    'HTTPS' => 'on'
+    'UNIQUE_ID' => 'ZwZnu0DjBkqZnbgxRPOgPwABLBM'
+    'REDIRECT_STATUS' => '200'
+    'REDIRECT_H2_STREAM_TAG' => '300-1'
+    'REDIRECT_H2_STREAM_ID' => '1'
+    'REDIRECT_H2_PUSHED_ON' => ''
+    'REDIRECT_H2_PUSHED' => ''
+    'REDIRECT_H2_PUSH' => 'off'
+    'REDIRECT_H2PUSH' => 'off'
+    'REDIRECT_HTTP2' => 'on'
+    'REDIRECT_SSL_TLS_SNI' => 'huay99.online'
+    'REDIRECT_HTTPS' => 'on'
+    'REDIRECT_UNIQUE_ID' => 'ZwZnu0DjBkqZnbgxRPOgPwABLBM'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1728473019.4877
+    'REQUEST_TIME' => 1728473019
+]
+2024-10-09 18:46:20 [171.5.243.216][143][ru69kaqt4vrikho9024c9j9sjh][info][credit] action Id: 2
+2024-10-09 18:46:20 [171.5.243.216][143][ru69kaqt4vrikho9024c9j9sjh][info][credit] user Id: 143
+2024-10-09 18:46:20 [171.5.243.216][143][ru69kaqt4vrikho9024c9j9sjh][info][credit] amount: 140
+2024-10-09 18:46:20 [171.5.243.216][143][ru69kaqt4vrikho9024c9j9sjh][info][credit] current Credit before Update: 7982.00
+2024-10-09 18:46:20 [171.5.243.216][143][ru69kaqt4vrikho9024c9j9sjh][info][credit] credit transection Id: 174
+2024-10-09 18:46:20 [171.5.243.216][143][ru69kaqt4vrikho9024c9j9sjh][info][credit] current Credit after Update: 7842
+2024-10-09 18:46:20 [171.5.243.216][143][ru69kaqt4vrikho9024c9j9sjh][info][application] $_GET = []
+
+$_POST = [
+    'poy' => '{\"bet_id\":14804,\"poy_list\":[{\"option\":\"teng_bon_2\",\"number\":\"11\",\"price\":\"20\",\"multiply\":90,\"is_duplicate\":false,\"last_add_num\":4},{\"option\":\"teng_bon_3\",\"number\":\"667\",\"price\":\"30\",\"multiply\":899,\"is_duplicate\":false,\"last_add_num\":3},{\"option\":\"teng_bon_3\",\"number\":\"676\",\"price\":\"40\",\"multiply\":899,\"is_duplicate\":false,\"last_add_num\":1},{\"option\":\"teng_bon_3\",\"number\":\"766\",\"price\":\"30\",\"multiply\":899,\"is_duplicate\":false,\"last_add_num\":2},{\"option\":\"teng_lang_2\",\"number\":\"11\",\"price\":\"20\",\"multiply\":90,\"is_duplicate\":false,\"last_add_num\":4}]}'
+    '_csrf' => 'QbZ_ane41jSxrCTxcL9m9Ih8Fej9L-W-KXTxS9gulp9y8xlYO96PQ-CbCZxEzVe2vAVNgJ9svdcRTJYFvWvS8Q=='
+]
+
+$_FILES = []
+
+$_COOKIE = [
+    '_csrf-backend' => 'e242f001b6dd73ceac7411c67726e00c4a7bd0f111e3d71fc000221c3a67457da:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"4zkFm9oj4IDVK6c698fcE27q3KnSOkVA\";}'
+    'PHPSESSID' => 'ru69kaqt4vrikho9024c9j9sjh'
+    '_csrf-frontend' => 'd7d0f6671165cb719203a060b6bae0064b81d793307e4cef8b03b0786e8b3d41a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"3Ef2LfYwQ7-m4r1B4yXhbCXi88gNeEDn\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'https://huay99.online/thai-shared/index'
+    '__id' => 143
+    '__expire' => 1728481580
+]
+
+$_SERVER = [
+    'PHP_FCGI_CHILDREN' => '0'
+    'PWD' => '/usr/local/safe-bin'
+    'PHP_FCGI_MAX_REQUESTS' => '0'
+    'SHLVL' => '0'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin'
+    'HTTP_CONNECTION' => 'close'
+    'SCRIPT_NAME' => '/frontend/web/index.php'
+    'REQUEST_URI' => '/api-poy/buy'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'POST'
+    'SERVER_PROTOCOL' => 'HTTP/2.0'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/api-poy/buy'
+    'REMOTE_PORT' => '56646'
+    'SCRIPT_FILENAME' => '/home/thaengla/domains/huay99.online/private_html/frontend/web/index.php'
+    'SERVER_ADMIN' => 'webmaster@huay99.online'
+    'CONTEXT_DOCUMENT_ROOT' => '/home/thaengla/domains/huay99.online/private_html'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'https'
+    'DOCUMENT_ROOT' => '/home/thaengla/domains/huay99.online/private_html'
+    'REMOTE_ADDR' => '171.5.243.216'
+    'SERVER_PORT' => '443'
+    'SERVER_ADDR' => '64.235.45.220'
+    'SERVER_NAME' => 'huay99.online'
+    'SERVER_SOFTWARE' => 'Apache/2'
+    'SERVER_SIGNATURE' => ''
+    'HTTP_HOST' => 'huay99.online'
+    'HTTP_PRIORITY' => 'u=1, i'
+    'HTTP_COOKIE' => '_csrf-backend=e242f001b6dd73ceac7411c67726e00c4a7bd0f111e3d71fc000221c3a67457da%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%224zkFm9oj4IDVK6c698fcE27q3KnSOkVA%22%3B%7D; PHPSESSID=ru69kaqt4vrikho9024c9j9sjh; _csrf-frontend=d7d0f6671165cb719203a060b6bae0064b81d793307e4cef8b03b0786e8b3d41a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%223Ef2LfYwQ7-m4r1B4yXhbCXi88gNeEDn%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'th-TH,th;q=0.9'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_REFERER' => 'https://huay99.online/thai-shared-chit/play?id=14804'
+    'HTTP_SEC_FETCH_DEST' => 'empty'
+    'HTTP_SEC_FETCH_MODE' => 'cors'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_ORIGIN' => 'https://huay99.online'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36'
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA' => '\"Google Chrome\";v=\"129\", \"Not=A?Brand\";v=\"8\", \"Chromium\";v=\"129\"'
+    'HTTP_X_CSRF_TOKEN' => 'QbZ_ane41jSxrCTxcL9m9Ih8Fej9L-W-KXTxS9gulp9y8xlYO96PQ-CbCZxEzVe2vAVNgJ9svdcRTJYFvWvS8Q=='
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'CONTENT_LENGTH' => '994'
+    'H2_STREAM_TAG' => '382-3'
+    'H2_STREAM_ID' => '3'
+    'H2_PUSHED_ON' => ''
+    'H2_PUSHED' => ''
+    'H2_PUSH' => 'off'
+    'H2PUSH' => 'off'
+    'HTTP2' => 'on'
+    'SSL_TLS_SNI' => 'huay99.online'
+    'HTTPS' => 'on'
+    'UNIQUE_ID' => 'ZwZtDLmdkptg4Ek6IEKQMQABcwg'
+    'REDIRECT_STATUS' => '200'
+    'REDIRECT_H2_STREAM_TAG' => '382-3'
+    'REDIRECT_H2_STREAM_ID' => '3'
+    'REDIRECT_H2_PUSHED_ON' => ''
+    'REDIRECT_H2_PUSHED' => ''
+    'REDIRECT_H2_PUSH' => 'off'
+    'REDIRECT_H2PUSH' => 'off'
+    'REDIRECT_HTTP2' => 'on'
+    'REDIRECT_SSL_TLS_SNI' => 'huay99.online'
+    'REDIRECT_HTTPS' => 'on'
+    'REDIRECT_UNIQUE_ID' => 'ZwZtDLmdkptg4Ek6IEKQMQABcwg'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1728474380.571
+    'REQUEST_TIME' => 1728474380
+]
+2024-10-09 18:59:20 [184.22.36.67][142][a750j1k2lg380g5le98f2ihgqr][info][credit] action Id: 2
+2024-10-09 18:59:20 [184.22.36.67][142][a750j1k2lg380g5le98f2ihgqr][info][credit] user Id: 142
+2024-10-09 18:59:20 [184.22.36.67][142][a750j1k2lg380g5le98f2ihgqr][info][credit] amount: 160
+2024-10-09 18:59:20 [184.22.36.67][142][a750j1k2lg380g5le98f2ihgqr][info][credit] current Credit before Update: 9100.00
+2024-10-09 18:59:20 [184.22.36.67][142][a750j1k2lg380g5le98f2ihgqr][info][credit] credit transection Id: 175
+2024-10-09 18:59:20 [184.22.36.67][142][a750j1k2lg380g5le98f2ihgqr][info][credit] current Credit after Update: 8940
+2024-10-09 18:59:20 [184.22.36.67][142][a750j1k2lg380g5le98f2ihgqr][info][application] $_GET = []
+
+$_POST = [
+    'poy' => '{\"bet_id\":14804,\"poy_list\":[{\"option\":\"teng_bon_2\",\"number\":\"03\",\"price\":20,\"multiply\":90,\"is_duplicate\":false,\"last_add_num\":2},{\"option\":\"teng_bon_2\",\"number\":\"30\",\"price\":20,\"multiply\":90,\"is_duplicate\":false,\"last_add_num\":3},{\"option\":\"teng_bon_2\",\"number\":\"80\",\"price\":20,\"multiply\":90,\"is_duplicate\":false,\"last_add_num\":4},{\"option\":\"teng_bon_3\",\"number\":\"207\",\"price\":20,\"multiply\":899,\"is_duplicate\":false,\"last_add_num\":1},{\"option\":\"teng_lang_2\",\"number\":\"03\",\"price\":20,\"multiply\":90,\"is_duplicate\":false,\"last_add_num\":2},{\"option\":\"teng_lang_2\",\"number\":\"30\",\"price\":20,\"multiply\":90,\"is_duplicate\":false,\"last_add_num\":3},{\"option\":\"teng_lang_2\",\"number\":\"80\",\"price\":20,\"multiply\":90,\"is_duplicate\":false,\"last_add_num\":4},{\"option\":\"tode_3\",\"number\":\"207\",\"price\":20,\"multiply\":120,\"is_duplicate\":false,\"last_add_num\":1}]}'
+    '_csrf' => 'yc03OQIr5XXIjWXK3ebT5oo--WY9kfLf_Mi9YPYTfW2vqHtDZEG2EY_PIYGki53XulSPKnnylbuvj4oksVUUDg=='
+]
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'a750j1k2lg380g5le98f2ihgqr'
+    '_csrf-frontend' => 'f538e499f6b7c552720daa94b16c6ce3e673e8462fc2e0a74f3049d041c255a6a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"feLzfjSdGBDKymN10jvLDcgdSG7DGFic\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'https://huay99.online/site/home'
+    '__id' => 142
+    '__expire' => 1728482360
+]
+
+$_SERVER = [
+    'PHP_FCGI_CHILDREN' => '0'
+    'PWD' => '/usr/local/safe-bin'
+    'PHP_FCGI_MAX_REQUESTS' => '0'
+    'SHLVL' => '0'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin'
+    'HTTP_CONNECTION' => 'close'
+    'SCRIPT_NAME' => '/frontend/web/index.php'
+    'REQUEST_URI' => '/api-poy/buy'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'POST'
+    'SERVER_PROTOCOL' => 'HTTP/2.0'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/api-poy/buy'
+    'REMOTE_PORT' => '5049'
+    'SCRIPT_FILENAME' => '/home/thaengla/domains/huay99.online/private_html/frontend/web/index.php'
+    'SERVER_ADMIN' => 'webmaster@huay99.online'
+    'CONTEXT_DOCUMENT_ROOT' => '/home/thaengla/domains/huay99.online/private_html'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'https'
+    'DOCUMENT_ROOT' => '/home/thaengla/domains/huay99.online/private_html'
+    'REMOTE_ADDR' => '184.22.36.67'
+    'SERVER_PORT' => '443'
+    'SERVER_ADDR' => '64.235.45.220'
+    'SERVER_NAME' => 'huay99.online'
+    'SERVER_SOFTWARE' => 'Apache/2'
+    'SERVER_SIGNATURE' => ''
+    'HTTP_HOST' => 'huay99.online'
+    'HTTP_PRIORITY' => 'u=1, i'
+    'HTTP_COOKIE' => 'PHPSESSID=a750j1k2lg380g5le98f2ihgqr; _csrf-frontend=f538e499f6b7c552720daa94b16c6ce3e673e8462fc2e0a74f3049d041c255a6a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22feLzfjSdGBDKymN10jvLDcgdSG7DGFic%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_REFERER' => 'https://huay99.online/thai-shared-chit/play?id=14804'
+    'HTTP_SEC_FETCH_DEST' => 'empty'
+    'HTTP_SEC_FETCH_MODE' => 'cors'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_ORIGIN' => 'https://huay99.online'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36'
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA' => '\"Google Chrome\";v=\"129\", \"Not=A?Brand\";v=\"8\", \"Chromium\";v=\"129\"'
+    'HTTP_X_CSRF_TOKEN' => 'yc03OQIr5XXIjWXK3ebT5oo--WY9kfLf_Mi9YPYTfW2vqHtDZEG2EY_PIYGki53XulSPKnnylbuvj4oksVUUDg=='
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'CONTENT_LENGTH' => '1443'
+    'H2_STREAM_TAG' => '307-1'
+    'H2_STREAM_ID' => '1'
+    'H2_PUSHED_ON' => ''
+    'H2_PUSHED' => ''
+    'H2_PUSH' => 'off'
+    'H2PUSH' => 'off'
+    'HTTP2' => 'on'
+    'SSL_TLS_SNI' => 'huay99.online'
+    'HTTPS' => 'on'
+    'UNIQUE_ID' => 'ZwZwGFwAyCivqrfqf2Jf6gABMwI'
+    'REDIRECT_STATUS' => '200'
+    'REDIRECT_H2_STREAM_TAG' => '307-1'
+    'REDIRECT_H2_STREAM_ID' => '1'
+    'REDIRECT_H2_PUSHED_ON' => ''
+    'REDIRECT_H2_PUSHED' => ''
+    'REDIRECT_H2_PUSH' => 'off'
+    'REDIRECT_H2PUSH' => 'off'
+    'REDIRECT_HTTP2' => 'on'
+    'REDIRECT_SSL_TLS_SNI' => 'huay99.online'
+    'REDIRECT_HTTPS' => 'on'
+    'REDIRECT_UNIQUE_ID' => 'ZwZwGFwAyCivqrfqf2Jf6gABMwI'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1728475160.1097
+    'REQUEST_TIME' => 1728475160
+]
+2024-10-09 19:19:25 [171.5.243.216][143][piljir08d6s7ajfbsl4tle5he4][info][credit] action Id: 2
+2024-10-09 19:19:25 [171.5.243.216][143][piljir08d6s7ajfbsl4tle5he4][info][credit] user Id: 143
+2024-10-09 19:19:25 [171.5.243.216][143][piljir08d6s7ajfbsl4tle5he4][info][credit] amount: 120
+2024-10-09 19:19:25 [171.5.243.216][143][piljir08d6s7ajfbsl4tle5he4][info][credit] current Credit before Update: 7842.00
+2024-10-09 19:19:25 [171.5.243.216][143][piljir08d6s7ajfbsl4tle5he4][info][credit] credit transection Id: 176
+2024-10-09 19:19:25 [171.5.243.216][143][piljir08d6s7ajfbsl4tle5he4][info][credit] current Credit after Update: 7722
+2024-10-09 19:19:25 [171.5.243.216][143][piljir08d6s7ajfbsl4tle5he4][info][application] $_GET = []
+
+$_POST = [
+    'poy' => '{\"bet_id\":14804,\"poy_list\":[{\"option\":\"teng_bon_2\",\"number\":\"03\",\"price\":\"30\",\"multiply\":90,\"is_duplicate\":false,\"last_add_num\":2},{\"option\":\"teng_bon_2\",\"number\":\"30\",\"price\":\"30\",\"multiply\":90,\"is_duplicate\":false,\"last_add_num\":1},{\"option\":\"teng_lang_2\",\"number\":\"03\",\"price\":\"30\",\"multiply\":90,\"is_duplicate\":false,\"last_add_num\":2},{\"option\":\"teng_lang_2\",\"number\":\"30\",\"price\":\"30\",\"multiply\":90,\"is_duplicate\":false,\"last_add_num\":1}]}'
+    '_csrf' => 'wMP4bUdiSzdWZTSGXJuu38_YDneuGLiKPWFI8mNEEMCMt8g1LRQJXiUiBuoqtp2c-5xmKMNfzNJVEnnBLwhnpg=='
+]
+
+$_FILES = []
+
+$_COOKIE = [
+    '_csrf-backend' => 'e242f001b6dd73ceac7411c67726e00c4a7bd0f111e3d71fc000221c3a67457da:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"4zkFm9oj4IDVK6c698fcE27q3KnSOkVA\";}'
+    'PHPSESSID' => 'piljir08d6s7ajfbsl4tle5he4'
+    '_csrf-frontend' => '14630efef13c6d68d007a58ae2e6e49cbf161fd5da545ff8c60f371ac1a50e5ea:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"Lt0XjvBisG2lv-3C4Dh_mGtXhs13LLwf\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'https://huay99.online/site/home'
+    '__id' => 143
+    '__expire' => 1728483565
+]
+
+$_SERVER = [
+    'PHP_FCGI_CHILDREN' => '0'
+    'PWD' => '/usr/local/safe-bin'
+    'PHP_FCGI_MAX_REQUESTS' => '0'
+    'SHLVL' => '0'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin'
+    'HTTP_CONNECTION' => 'close'
+    'SCRIPT_NAME' => '/frontend/web/index.php'
+    'REQUEST_URI' => '/api-poy/buy'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'POST'
+    'SERVER_PROTOCOL' => 'HTTP/2.0'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/api-poy/buy'
+    'REMOTE_PORT' => '57424'
+    'SCRIPT_FILENAME' => '/home/thaengla/domains/huay99.online/private_html/frontend/web/index.php'
+    'SERVER_ADMIN' => 'webmaster@huay99.online'
+    'CONTEXT_DOCUMENT_ROOT' => '/home/thaengla/domains/huay99.online/private_html'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'https'
+    'DOCUMENT_ROOT' => '/home/thaengla/domains/huay99.online/private_html'
+    'REMOTE_ADDR' => '171.5.243.216'
+    'SERVER_PORT' => '443'
+    'SERVER_ADDR' => '64.235.45.220'
+    'SERVER_NAME' => 'huay99.online'
+    'SERVER_SOFTWARE' => 'Apache/2'
+    'SERVER_SIGNATURE' => ''
+    'HTTP_HOST' => 'huay99.online'
+    'HTTP_PRIORITY' => 'u=1, i'
+    'HTTP_COOKIE' => '_csrf-backend=e242f001b6dd73ceac7411c67726e00c4a7bd0f111e3d71fc000221c3a67457da%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%224zkFm9oj4IDVK6c698fcE27q3KnSOkVA%22%3B%7D; PHPSESSID=piljir08d6s7ajfbsl4tle5he4; _csrf-frontend=14630efef13c6d68d007a58ae2e6e49cbf161fd5da545ff8c60f371ac1a50e5ea%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22Lt0XjvBisG2lv-3C4Dh_mGtXhs13LLwf%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'th-TH,th;q=0.9'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_REFERER' => 'https://huay99.online/thai-shared-chit/play?id=14804'
+    'HTTP_SEC_FETCH_DEST' => 'empty'
+    'HTTP_SEC_FETCH_MODE' => 'cors'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_ORIGIN' => 'https://huay99.online'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36'
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA' => '\"Google Chrome\";v=\"129\", \"Not=A?Brand\";v=\"8\", \"Chromium\";v=\"129\"'
+    'HTTP_X_CSRF_TOKEN' => 'wMP4bUdiSzdWZTSGXJuu38_YDneuGLiKPWFI8mNEEMCMt8g1LRQJXiUiBuoqtp2c-5xmKMNfzNJVEnnBLwhnpg=='
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'CONTENT_LENGTH' => '822'
+    'H2_STREAM_TAG' => '302-1'
+    'H2_STREAM_ID' => '1'
+    'H2_PUSHED_ON' => ''
+    'H2_PUSHED' => ''
+    'H2_PUSH' => 'off'
+    'H2PUSH' => 'off'
+    'HTTP2' => 'on'
+    'SSL_TLS_SNI' => 'huay99.online'
+    'HTTPS' => 'on'
+    'UNIQUE_ID' => 'ZwZ0zVwAyCivqrfqf2KbGQABLgM'
+    'REDIRECT_STATUS' => '200'
+    'REDIRECT_H2_STREAM_TAG' => '302-1'
+    'REDIRECT_H2_STREAM_ID' => '1'
+    'REDIRECT_H2_PUSHED_ON' => ''
+    'REDIRECT_H2_PUSHED' => ''
+    'REDIRECT_H2_PUSH' => 'off'
+    'REDIRECT_H2PUSH' => 'off'
+    'REDIRECT_HTTP2' => 'on'
+    'REDIRECT_SSL_TLS_SNI' => 'huay99.online'
+    'REDIRECT_HTTPS' => 'on'
+    'REDIRECT_UNIQUE_ID' => 'ZwZ0zVwAyCivqrfqf2KbGQABLgM'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1728476365.5643
+    'REQUEST_TIME' => 1728476365
+]
+2024-10-09 19:26:16 [171.5.243.216][143][piljir08d6s7ajfbsl4tle5he4][info][credit] action Id: 2
+2024-10-09 19:26:16 [171.5.243.216][143][piljir08d6s7ajfbsl4tle5he4][info][credit] user Id: 143
+2024-10-09 19:26:16 [171.5.243.216][143][piljir08d6s7ajfbsl4tle5he4][info][credit] amount: 45
+2024-10-09 19:26:16 [171.5.243.216][143][piljir08d6s7ajfbsl4tle5he4][info][credit] current Credit before Update: 7722.00
+2024-10-09 19:26:16 [171.5.243.216][143][piljir08d6s7ajfbsl4tle5he4][info][credit] credit transection Id: 177
+2024-10-09 19:26:16 [171.5.243.216][143][piljir08d6s7ajfbsl4tle5he4][info][credit] current Credit after Update: 7677
+2024-10-09 19:26:16 [171.5.243.216][143][piljir08d6s7ajfbsl4tle5he4][info][application] $_GET = []
+
+$_POST = [
+    'poy' => '{\"bet_id\":14804,\"poy_list\":[{\"option\":\"teng_bon_3\",\"number\":\"286\",\"price\":\"25\",\"multiply\":899,\"is_duplicate\":false,\"last_add_num\":1},{\"option\":\"tode_3\",\"number\":\"286\",\"price\":\"20\",\"multiply\":120,\"is_duplicate\":false,\"last_add_num\":1}]}'
+    '_csrf' => '16NxdGW4uff8L_gMzbkvY9aQKEFOFeR6f1UQZmZjYryb10EsD877no9oymC7lBwg4tRAHiNSkCIXJiFVKi8V2g=='
+]
+
+$_FILES = []
+
+$_COOKIE = [
+    '_csrf-backend' => 'e242f001b6dd73ceac7411c67726e00c4a7bd0f111e3d71fc000221c3a67457da:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"4zkFm9oj4IDVK6c698fcE27q3KnSOkVA\";}'
+    'PHPSESSID' => 'piljir08d6s7ajfbsl4tle5he4'
+    '_csrf-frontend' => '14630efef13c6d68d007a58ae2e6e49cbf161fd5da545ff8c60f371ac1a50e5ea:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"Lt0XjvBisG2lv-3C4Dh_mGtXhs13LLwf\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'https://huay99.online/site/home'
+    '__id' => 143
+    '__expire' => 1728483976
+]
+
+$_SERVER = [
+    'PHP_FCGI_CHILDREN' => '0'
+    'PWD' => '/usr/local/safe-bin'
+    'PHP_FCGI_MAX_REQUESTS' => '0'
+    'SHLVL' => '0'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin'
+    'HTTP_CONNECTION' => 'close'
+    'SCRIPT_NAME' => '/frontend/web/index.php'
+    'REQUEST_URI' => '/api-poy/buy'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'POST'
+    'SERVER_PROTOCOL' => 'HTTP/2.0'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/api-poy/buy'
+    'REMOTE_PORT' => '57588'
+    'SCRIPT_FILENAME' => '/home/thaengla/domains/huay99.online/private_html/frontend/web/index.php'
+    'SERVER_ADMIN' => 'webmaster@huay99.online'
+    'CONTEXT_DOCUMENT_ROOT' => '/home/thaengla/domains/huay99.online/private_html'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'https'
+    'DOCUMENT_ROOT' => '/home/thaengla/domains/huay99.online/private_html'
+    'REMOTE_ADDR' => '171.5.243.216'
+    'SERVER_PORT' => '443'
+    'SERVER_ADDR' => '64.235.45.220'
+    'SERVER_NAME' => 'huay99.online'
+    'SERVER_SOFTWARE' => 'Apache/2'
+    'SERVER_SIGNATURE' => ''
+    'HTTP_HOST' => 'huay99.online'
+    'HTTP_PRIORITY' => 'u=1, i'
+    'HTTP_COOKIE' => '_csrf-backend=e242f001b6dd73ceac7411c67726e00c4a7bd0f111e3d71fc000221c3a67457da%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%224zkFm9oj4IDVK6c698fcE27q3KnSOkVA%22%3B%7D; PHPSESSID=piljir08d6s7ajfbsl4tle5he4; _csrf-frontend=14630efef13c6d68d007a58ae2e6e49cbf161fd5da545ff8c60f371ac1a50e5ea%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22Lt0XjvBisG2lv-3C4Dh_mGtXhs13LLwf%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'th-TH,th;q=0.9'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_REFERER' => 'https://huay99.online/thai-shared-chit/play?id=14804'
+    'HTTP_SEC_FETCH_DEST' => 'empty'
+    'HTTP_SEC_FETCH_MODE' => 'cors'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_ORIGIN' => 'https://huay99.online'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36'
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA' => '\"Google Chrome\";v=\"129\", \"Not=A?Brand\";v=\"8\", \"Chromium\";v=\"129\"'
+    'HTTP_X_CSRF_TOKEN' => '16NxdGW4uff8L_gMzbkvY9aQKEFOFeR6f1UQZmZjYryb10EsD877no9oymC7lBwg4tRAHiNSkCIXJiFVKi8V2g=='
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'CONTENT_LENGTH' => '486'
+    'H2_STREAM_TAG' => '365-3'
+    'H2_STREAM_ID' => '3'
+    'H2_PUSHED_ON' => ''
+    'H2_PUSHED' => ''
+    'H2_PUSH' => 'off'
+    'H2PUSH' => 'off'
+    'HTTP2' => 'on'
+    'SSL_TLS_SNI' => 'huay99.online'
+    'HTTPS' => 'on'
+    'UNIQUE_ID' => 'ZwZ2aInshhfF3v4PwWPoVwABXR8'
+    'REDIRECT_STATUS' => '200'
+    'REDIRECT_H2_STREAM_TAG' => '365-3'
+    'REDIRECT_H2_STREAM_ID' => '3'
+    'REDIRECT_H2_PUSHED_ON' => ''
+    'REDIRECT_H2_PUSHED' => ''
+    'REDIRECT_H2_PUSH' => 'off'
+    'REDIRECT_H2PUSH' => 'off'
+    'REDIRECT_HTTP2' => 'on'
+    'REDIRECT_SSL_TLS_SNI' => 'huay99.online'
+    'REDIRECT_HTTPS' => 'on'
+    'REDIRECT_UNIQUE_ID' => 'ZwZ2aInshhfF3v4PwWPoVwABXR8'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1728476776.165
+    'REQUEST_TIME' => 1728476776
+]
+2024-10-09 19:49:12 [171.5.243.216][143][piljir08d6s7ajfbsl4tle5he4][info][credit] action Id: 2
+2024-10-09 19:49:12 [171.5.243.216][143][piljir08d6s7ajfbsl4tle5he4][info][credit] user Id: 143
+2024-10-09 19:49:12 [171.5.243.216][143][piljir08d6s7ajfbsl4tle5he4][info][credit] amount: 120
+2024-10-09 19:49:12 [171.5.243.216][143][piljir08d6s7ajfbsl4tle5he4][info][credit] current Credit before Update: 7677.00
+2024-10-09 19:49:12 [171.5.243.216][143][piljir08d6s7ajfbsl4tle5he4][info][credit] credit transection Id: 178
+2024-10-09 19:49:12 [171.5.243.216][143][piljir08d6s7ajfbsl4tle5he4][info][credit] current Credit after Update: 7557
+2024-10-09 19:49:12 [171.5.243.216][143][piljir08d6s7ajfbsl4tle5he4][info][application] $_GET = []
+
+$_POST = [
+    'poy' => '{\"bet_id\":14804,\"poy_list\":[{\"option\":\"teng_bon_2\",\"number\":\"03\",\"price\":\"10\",\"multiply\":70,\"is_duplicate\":false,\"last_add_num\":5},{\"option\":\"teng_bon_2\",\"number\":\"06\",\"price\":\"10\",\"multiply\":90,\"is_duplicate\":false,\"last_add_num\":3},{\"option\":\"teng_bon_2\",\"number\":\"09\",\"price\":\"10\",\"multiply\":70,\"is_duplicate\":false,\"last_add_num\":1},{\"option\":\"teng_bon_2\",\"number\":\"30\",\"price\":\"10\",\"multiply\":70,\"is_duplicate\":false,\"last_add_num\":6},{\"option\":\"teng_bon_2\",\"number\":\"60\",\"price\":\"10\",\"multiply\":90,\"is_duplicate\":false,\"last_add_num\":4},{\"option\":\"teng_bon_2\",\"number\":\"90\",\"price\":\"10\",\"multiply\":70,\"is_duplicate\":false,\"last_add_num\":2},{\"option\":\"teng_lang_2\",\"number\":\"03\",\"price\":\"10\",\"multiply\":70,\"is_duplicate\":false,\"last_add_num\":5},{\"option\":\"teng_lang_2\",\"number\":\"06\",\"price\":\"10\",\"multiply\":90,\"is_duplicate\":false,\"last_add_num\":3},{\"option\":\"teng_lang_2\",\"number\":\"09\",\"price\":\"10\",\"multiply\":70,\"is_duplicate\":false,\"last_add_num\":1},{\"option\":\"teng_lang_2\",\"number\":\"30\",\"price\":\"10\",\"multiply\":70,\"is_duplicate\":false,\"last_add_num\":6},{\"option\":\"teng_lang_2\",\"number\":\"60\",\"price\":\"10\",\"multiply\":90,\"is_duplicate\":false,\"last_add_num\":4},{\"option\":\"teng_lang_2\",\"number\":\"90\",\"price\":\"10\",\"multiply\":70,\"is_duplicate\":false,\"last_add_num\":2}]}'
+    '_csrf' => 'brqD4Vy66WtEXsSbcJ--vDobcjOrOJJDtAAvCiH3po0izrO5NsyrAjcZ9vcGso3_Dl8abMZ_5hvccx45bbvR6w=='
+]
+
+$_FILES = []
+
+$_COOKIE = [
+    '_csrf-backend' => 'e242f001b6dd73ceac7411c67726e00c4a7bd0f111e3d71fc000221c3a67457da:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"4zkFm9oj4IDVK6c698fcE27q3KnSOkVA\";}'
+    'PHPSESSID' => 'piljir08d6s7ajfbsl4tle5he4'
+    '_csrf-frontend' => '14630efef13c6d68d007a58ae2e6e49cbf161fd5da545ff8c60f371ac1a50e5ea:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"Lt0XjvBisG2lv-3C4Dh_mGtXhs13LLwf\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'https://huay99.online/site/home'
+    '__id' => 143
+    '__expire' => 1728485352
+]
+
+$_SERVER = [
+    'PHP_FCGI_CHILDREN' => '0'
+    'PWD' => '/usr/local/safe-bin'
+    'PHP_FCGI_MAX_REQUESTS' => '0'
+    'SHLVL' => '0'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin'
+    'HTTP_CONNECTION' => 'close'
+    'SCRIPT_NAME' => '/frontend/web/index.php'
+    'REQUEST_URI' => '/api-poy/buy'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'POST'
+    'SERVER_PROTOCOL' => 'HTTP/2.0'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/api-poy/buy'
+    'REMOTE_PORT' => '58042'
+    'SCRIPT_FILENAME' => '/home/thaengla/domains/huay99.online/private_html/frontend/web/index.php'
+    'SERVER_ADMIN' => 'webmaster@huay99.online'
+    'CONTEXT_DOCUMENT_ROOT' => '/home/thaengla/domains/huay99.online/private_html'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'https'
+    'DOCUMENT_ROOT' => '/home/thaengla/domains/huay99.online/private_html'
+    'REMOTE_ADDR' => '171.5.243.216'
+    'SERVER_PORT' => '443'
+    'SERVER_ADDR' => '64.235.45.220'
+    'SERVER_NAME' => 'huay99.online'
+    'SERVER_SOFTWARE' => 'Apache/2'
+    'SERVER_SIGNATURE' => ''
+    'HTTP_HOST' => 'huay99.online'
+    'HTTP_PRIORITY' => 'u=1, i'
+    'HTTP_COOKIE' => '_csrf-backend=e242f001b6dd73ceac7411c67726e00c4a7bd0f111e3d71fc000221c3a67457da%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%224zkFm9oj4IDVK6c698fcE27q3KnSOkVA%22%3B%7D; PHPSESSID=piljir08d6s7ajfbsl4tle5he4; _csrf-frontend=14630efef13c6d68d007a58ae2e6e49cbf161fd5da545ff8c60f371ac1a50e5ea%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22Lt0XjvBisG2lv-3C4Dh_mGtXhs13LLwf%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'th-TH,th;q=0.9'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_REFERER' => 'https://huay99.online/thai-shared-chit/play?id=14804'
+    'HTTP_SEC_FETCH_DEST' => 'empty'
+    'HTTP_SEC_FETCH_MODE' => 'cors'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_ORIGIN' => 'https://huay99.online'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36'
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA' => '\"Google Chrome\";v=\"129\", \"Not=A?Brand\";v=\"8\", \"Chromium\";v=\"129\"'
+    'HTTP_X_CSRF_TOKEN' => 'brqD4Vy66WtEXsSbcJ--vDobcjOrOJJDtAAvCiH3po0izrO5NsyrAjcZ9vcGso3_Dl8abMZ_5hvccx45bbvR6w=='
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'CONTENT_LENGTH' => '2162'
+    'H2_STREAM_TAG' => '312-1'
+    'H2_STREAM_ID' => '1'
+    'H2_PUSHED_ON' => ''
+    'H2_PUSHED' => ''
+    'H2_PUSH' => 'off'
+    'H2PUSH' => 'off'
+    'HTTP2' => 'on'
+    'SSL_TLS_SNI' => 'huay99.online'
+    'HTTPS' => 'on'
+    'UNIQUE_ID' => 'ZwZ7yNPLRu66HbHjS3Pu2QABOAg'
+    'REDIRECT_STATUS' => '200'
+    'REDIRECT_H2_STREAM_TAG' => '312-1'
+    'REDIRECT_H2_STREAM_ID' => '1'
+    'REDIRECT_H2_PUSHED_ON' => ''
+    'REDIRECT_H2_PUSHED' => ''
+    'REDIRECT_H2_PUSH' => 'off'
+    'REDIRECT_H2PUSH' => 'off'
+    'REDIRECT_HTTP2' => 'on'
+    'REDIRECT_SSL_TLS_SNI' => 'huay99.online'
+    'REDIRECT_HTTPS' => 'on'
+    'REDIRECT_UNIQUE_ID' => 'ZwZ7yNPLRu66HbHjS3Pu2QABOAg'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1728478152.0132
+    'REQUEST_TIME' => 1728478152
+]

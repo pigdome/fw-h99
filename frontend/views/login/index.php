@@ -42,7 +42,7 @@ $this->registerJs($localStorageJs);
                     <div class="notice-bar flex-fill">
                         <div class="txt-notice">
                             <ul id="marquee1" class="marquee">
-                                <li>&nbsp;ยินดีต้อนรับทุกท่านเข้าสู่เว็บ Huay178.online
+                                <li>&nbsp;ยินดีต้อนรับทุกท่านเข้าสู่เว็บ Huay99.online
                                     เว็บหวยออนไลน์ที่มาแรงที่สุดในตอนนี้
                                 </li>
                             </ul>
@@ -56,7 +56,7 @@ $this->registerJs($localStorageJs);
             <section id="loginbox" class="mb-2">
 
             <div class="col-lg pt-2 pc-view text-center">
-                <a href="https://lin.ee/YMy3C3C" target="_blank">
+                <a href="https://lin.ee/cDWNdUL" target="_blank">
                 <img src="<?= Yii::getAlias('@web/version6/images/ads-bar-01.jpg') ?>" width="100%" height="auto" class="img-responsive"></a>
             </div>
 
@@ -137,7 +137,7 @@ $this->registerJs($localStorageJs);
                             <div class="row">
                                 <div class="col-6 pr-1">
                                     <div class="btoutline">
-                                        <a href="https://lin.ee/YMy3C3C" class="btn silver-btn btn-sm btn-block"
+                                        <a href="https://lin.ee/cDWNdUL" class="btn silver-btn btn-sm btn-block"
                                            target="_blank"><i class="fas fa-headset"></i> ติดต่อเรา</a>
                                     </div>
                                 </div>
@@ -696,7 +696,7 @@ $this->registerJs($localStorageJs);
         <footer class="page-footer font-small bg-danger pt-1 mt-5">
             <!-- Copyright -->
             <div class="footer-copyright text-center py-3">© 2024 Copyright -
-                <a href="<?= \yii\helpers\Url::to(['site/index'])?>">  Huay178.online</a>
+                <a href="<?= \yii\helpers\Url::to(['site/index'])?>">  Huay99.online</a>
             </div>
             <!-- Copyright -->
         </footer>

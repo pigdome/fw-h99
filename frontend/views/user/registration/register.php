@@ -185,7 +185,7 @@ use yii\helpers\Url;
     <footer id="footer-member" class="page-footer font-small bg-danger pt-1 mt-5 fixed-bottom pc-view">
 
         <div class="footer-copyright text-center  py-3">© 2024 Copyright -
-            <a href="#" class=""> Huay178.online</a>
+            <a href="#" class=""> Huay99.online</a>
         </div>
 
     </footer>

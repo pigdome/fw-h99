@@ -20,11 +20,11 @@ AppAssetLoginV6::register($this);
     <meta property="og:url" content="<?= Url::base('https') ?>/frontend/web/user/login" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="HUAY178" />
-    <meta property="og:description" content="HUAY178 เว็บหวยออนไลน์ที่ดีที่สุด ของเมืองไทย จ่ายเร็ว การเงินมั่นคง ลุ้นแทงหวยลาวชุด หวยรัฐบาล หวยเวียดนามและอื่นๆอีกมากมาย บริการ 24 ชม." />
+    <meta property="og:description" content="HUAY99 เว็บหวยออนไลน์ที่ดีที่สุด ของเมืองไทย จ่ายเร็ว การเงินมั่นคง ลุ้นแทงหวยลาวชุด หวยรัฐบาล หวยเวียดนามและอื่นๆอีกมากมาย บริการ 24 ชม." />
     <meta property="og:image" content="<?= Url::base('https') ?>/img/fav.png" />
     <link rel="icon" href="<?= Url::base('https') ?>/img/fav.png" type="image/x-icon">
     <?php $this->head() ?>
-    <title>HUAY178 เว็บหวยออนไลน์ที่ดีที่สุด ของเมืองไทย จ่ายเร็ว การเงินมั่นคง ลุ้นแทงหวยลาวชุด หวยรัฐบาล หวยเวียดนามและอื่นๆอีกมากมาย บริการ 24 ชม.</title>
+    <title>HUAY99 เว็บหวยออนไลน์ที่ดีที่สุด ของเมืองไทย จ่ายเร็ว การเงินมั่นคง ลุ้นแทงหวยลาวชุด หวยรัฐบาล หวยเวียดนามและอื่นๆอีกมากมาย บริการ 24 ชม.</title>
 </head>
 <body id="top" ontouchstart="">
 <?php $this->beginBody() ?>
