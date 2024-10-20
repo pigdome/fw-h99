@@ -38,7 +38,7 @@ return [
                 'name' => '_identity-frontend',
                 'httpOnly' => true
             ],
-            'authTimeout' => 7200,
+            'authTimeout' => 216000,
         ],
         'session' => [
             'class' => 'yii\web\DbSession',

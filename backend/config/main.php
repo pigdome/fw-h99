@@ -20,7 +20,7 @@ return [
             'identityClass' => 'dektrium\user\models\User',
             'enableAutoLogin' => false,
             'identityCookie' => ['name' => '_identity-backend', 'httpOnly' => true],
-            'authTimeout' => 7200,
+            'authTimeout' => 216000,
         ],
         'session' => [
             'class' => 'yii\web\DbSession',
