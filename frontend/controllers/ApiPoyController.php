@@ -82,6 +82,7 @@ class ApiPoyController extends Controller
             $isLimitNumber = false;
             $poyLists = [];
             $isLimitAuto = $thaiSharedGame->limitAuto === 1 ? true : false;
+            $whereLevelPlayType = null;
             foreach ($poys['poy_list'] as $key => $poy) {
                 $code = PlayType::instance()->getReConvertPlayTypeCode($poy['option']);
                 $playType = PlayType::find()->where(['game_id' => $thaiSharedGame->gameId, 'code' => $code])->one();
@@ -304,6 +305,7 @@ class ApiPoyController extends Controller
             $poyLists = [];
             $poyNumbers = [];
             $isLimitAuto = $thaiSharedGame->limitAuto === 1 ? true : false;
+            $whereLevelPlayType = null;
             foreach ($poys['poy_list'] as $key => $poy) {
                 $code = PlayType::instance()->getReConvertPlayTypeCode($poy['option']);
                 $playType = PlayType::find()->where(['game_id' => $thaiSharedGame->gameId, 'code' => $code])->one();
@@ -476,7 +478,6 @@ class ApiPoyController extends Controller
             if ($total > ($user->creditBalance - $sumWaittingPostWithDraw)) {
                 return ['result' => 'BALANCE_NOT_ENOUGH'];
             }
-
             $transaction = \Yii::$app->db->beginTransaction();
             try {
                 $thaiSharedGameChit = new ThaiSharedGameChit();
@@ -516,14 +517,20 @@ class ApiPoyController extends Controller
                     $model->createdBy = $userId;
                     $model->userId = $userId;
                     $model->jackPotPerUnit = $poy['multiply'];
+                    $model->numberSetLottery = "";
+
                     if (isset($discountPrice)) {
                         $model->discount = $discountPrice;
                         $totalDiscount += $model->discount;
                     }
 
-                    if (!$model->save()) {
-                        throw new ServerErrorHttpException('Can Not Save ThaiSharedGameChitDetail');
+                    try {
+                        $model->save();
+                    } catch (\Exception $e) {
+                        return ["result" => $e];
+                        throw $e;
                     }
+
                     $totalAmount += $model->amount;
                 }
                 $thaiSharedGameChit->totalAmount = $totalAmount;
