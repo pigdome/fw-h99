@@ -1,4 +1,5 @@
 <?php
+
 namespace frontend\controllers;
 
 use common\libs\Constants;
@@ -26,7 +27,8 @@ use common\models\YeekeeChitDetail;
 use common\models\YeekeePost;
 use common\models\YeekeeSearch;
 
-class ApiPoyController extends Controller {
+class ApiPoyController extends Controller
+{
 
     public function behaviors()
     {
@@ -54,16 +56,16 @@ class ApiPoyController extends Controller {
         Yii::$app->response->format = Response::FORMAT_JSON;
         $userId = Yii::$app->user->id;
         if (Yii::$app->request->isPost) {
-//            $checkQueueProcess = Queue::find()->where([
-//                'userId' => $userId,
-//                'status' => Constants::status_active
-//            ])->count();
-//            if ($checkQueueProcess) {
-//                return [
-//                    'result' => 'ERROR',
-//                    'message' => 'ระบบกำลังประมวลผลอยู่ กรุณาแทงใหม่อีกครั้ง ภายใน 60 วินาที',
-//                ];
-//            }
+            //            $checkQueueProcess = Queue::find()->where([
+            //                'userId' => $userId,
+            //                'status' => Constants::status_active
+            //            ])->count();
+            //            if ($checkQueueProcess) {
+            //                return [
+            //                    'result' => 'ERROR',
+            //                    'message' => 'ระบบกำลังประมวลผลอยู่ กรุณาแทงใหม่อีกครั้ง ภายใน 60 วินาที',
+            //                ];
+            //            }
             $poy = Yii::$app->request->post('poy');
             $poys = json_decode($poy, true);
             $thaiSharedGame = ThaiSharedGame::find()->andWhere('NOW() >= startDate AND endDate >= NOW()')->andWhere([
@@ -94,9 +96,9 @@ class ApiPoyController extends Controller {
                 ])->sum('amount');
                 if ($totalAmountNumber) {
                     $totalBuyNumber = $poy['price'] + $totalAmountNumber;
-                }else{
+                } else {
                     $totalBuyNumber = $totalAmountNumber;
-                    
+
                     // เช็คราคาเริ่มต้นซื้อมาเท่าไร
                     $whereLevelPlayType = SetupLevelPlaytype::find()->where([
                         'codePlayType' => $playType->code,
@@ -118,9 +120,12 @@ class ApiPoyController extends Controller {
                 // ราคาแทงเกิน maximum 6
                 $maximumPaid = SetupLevelPlaytype::find()->where([
                     'codePlayType' => $playType->code,
-                ])->andWhere(['like','gameId',$thaiSharedGame->gameId])
-                ->andWhere(['<=','maximumPlay',$poy['price']
-                ])->orderBy('maximumPlay DESC')->one();
+                ])->andWhere(['like', 'gameId', $thaiSharedGame->gameId])
+                    ->andWhere([
+                        '<=',
+                        'maximumPlay',
+                        $poy['price']
+                    ])->orderBy('maximumPlay DESC')->one();
 
                 $setupLevelPlayType = SetupLevelPlaytype::find()->where([
                     'codePlayType' => $playType->code,
@@ -141,9 +146,12 @@ class ApiPoyController extends Controller {
                 // ลดราคาจ่ายเอาตัวที่เกิน max
                 $setupLevelPlayTypeMaxPaid = SetupLevelPlaytype::find()->where([
                     'codePlayType' => $playType->code,
-                ])->andWhere(['like','gameId',$thaiSharedGame->gameId])
-                ->andWhere(['<=','maximumPlay',$totalBuyNumber
-                ])->orderBy('maximumPlay DESC')->one();
+                ])->andWhere(['like', 'gameId', $thaiSharedGame->gameId])
+                    ->andWhere([
+                        '<=',
+                        'maximumPlay',
+                        $totalBuyNumber
+                    ])->orderBy('maximumPlay DESC')->one();
 
                 $limitLotteryNumberGame = LimitLotteryNumberGame::find()->where([
                     'thaiSharedGameId' => $thaiSharedGame->id,
@@ -158,7 +166,7 @@ class ApiPoyController extends Controller {
                     ])->sum('amount');
                     if (!$totalAmountNumber) {
                         $totalBuyNumber = $poy['price'] + $totalAmountNumber;
-                    }else{
+                    } else {
                         $totalBuyNumber = $totalAmountNumber;
                     }
                     $limitLotteryNumberGame = LimitAutoLotteryNumberGame::find()->where([
@@ -171,7 +179,7 @@ class ApiPoyController extends Controller {
                         'thaiSharedGameId' => $thaiSharedGame->id,
                         'number' => $poy['number'],
                         'playTypeId' => $playType->id,
-                        ThaiSharedGameChitDetail::tableName().'.userId' => $userId,
+                        ThaiSharedGameChitDetail::tableName() . '.userId' => $userId,
                     ])->sum('amount');
                     if (isset($poyLists[$playType->code][$poy['number']])) {
                         $totalBuy = $totalAmount + $poyLists[$playType->code][$poy['number']] + $price;
@@ -185,7 +193,7 @@ class ApiPoyController extends Controller {
                         if ($limitBuy > 0) {
                             $message = 'ยอดแทงเกินกว่ายอดจำกัดจำนวนการแทงต่อสมาชิก';
                         } else {
-                            $message .= $playType->title.' เลข '.$poy['number'].' ปิดรับแทง <br>';
+                            $message .= $playType->title . ' เลข ' . $poy['number'] . ' ปิดรับแทง <br>';
                         }
                         $isLimitNumber = true;
                         $jackPotPerUnit = $playType->jackpot_per_unit;
@@ -203,17 +211,13 @@ class ApiPoyController extends Controller {
                 }
                 if ($setupLevelPlayType) {
                     $jackPotPerUnit = $setupLevelPlayType->jackPotPerUnit;
-                } 
-                else if ($whereLevelPlayType) {
+                } else if ($whereLevelPlayType) {
                     $jackPotPerUnit =  $whereLevelPlayType->jackPotPerUnit;
-                } 
-                else if ($setupLevelPlayTypeMaxPaid) {
+                } else if ($setupLevelPlayTypeMaxPaid) {
                     $jackPotPerUnit = $setupLevelPlayTypeMaxPaid->jackPotPerUnit;
-                }
-                else if ($maximumPaid) {
+                } else if ($maximumPaid) {
                     $jackPotPerUnit =  $maximumPaid->jackPotPerUnit;
-                } 
-                 else if ($limitLotteryNumberGame) {
+                } else if ($limitLotteryNumberGame) {
                     $jackPotPerUnit = $limitLotteryNumberGame->jackPotPerUnit;
                     if ((int)$jackPotPerUnit === 0) {
                         $isNumberClose = true;
@@ -231,7 +235,6 @@ class ApiPoyController extends Controller {
                     ])->one();
                     if ($discountGame) {
                         $price = $price * $discountGame->discount / 100;
-
                     }
                     $jackPotPerUnit = $playType->jackpot_per_unit;
                 }
@@ -314,7 +317,7 @@ class ApiPoyController extends Controller {
                 ])->sum('amount');
                 if ($totalAmountNumber) {
                     $totalBuyNumber = $poy['price'] + $totalAmountNumber;
-                }else{
+                } else {
                     $totalBuyNumber = $totalAmountNumber;
 
                     // เช็คราคาเริ่มต้นซื้อมาเท่าไร
@@ -338,9 +341,12 @@ class ApiPoyController extends Controller {
                 // ราคาแทงเกิน maximum 6
                 $maximumPaid = SetupLevelPlaytype::find()->where([
                     'codePlayType' => $playType->code,
-                ])->andWhere(['like','gameId',$thaiSharedGame->gameId])
-                ->andWhere(['<=','maximumPlay',$poy['price']
-                ])->orderBy('maximumPlay DESC')->one();
+                ])->andWhere(['like', 'gameId', $thaiSharedGame->gameId])
+                    ->andWhere([
+                        '<=',
+                        'maximumPlay',
+                        $poy['price']
+                    ])->orderBy('maximumPlay DESC')->one();
 
 
                 $setupLevelPlayType = SetupLevelPlaytype::find()->where([
@@ -362,9 +368,12 @@ class ApiPoyController extends Controller {
                 // ลดราคาจ่ายเอาตัวที่เกิน max
                 $setupLevelPlayTypeMaxPaid = SetupLevelPlaytype::find()->where([
                     'codePlayType' => $playType->code,
-                ])->andWhere(['like','gameId',$thaiSharedGame->gameId])
-                ->andWhere(['<=','maximumPlay',$totalBuyNumber
-                ])->orderBy('maximumPlay DESC')->one();
+                ])->andWhere(['like', 'gameId', $thaiSharedGame->gameId])
+                    ->andWhere([
+                        '<=',
+                        'maximumPlay',
+                        $totalBuyNumber
+                    ])->orderBy('maximumPlay DESC')->one();
 
 
                 $limitLotteryNumberGame = LimitLotteryNumberGame::find()->where([
@@ -374,13 +383,13 @@ class ApiPoyController extends Controller {
                 ])->orderBy('createdAt DESC')->one();
                 if (!$limitLotteryNumberGame && $isLimitAuto) {
                     $totalAmountNumber = ThaiSharedGameChitDetail::find()->joinWith('thaiSharedGameChit')->where([
-                        'number' => $poy['number'] ,
+                        'number' => $poy['number'],
                         'playTypeId' => $playType->id,
                         'thaiSharedGameId' => $thaiSharedGame->id,
                     ])->sum('amount');
                     if (!$totalAmountNumber) {
                         $totalBuyNumber = $poy['price'] + $totalAmountNumber;
-                    }else{
+                    } else {
                         $totalBuyNumber = $totalAmountNumber;
                     }
                     $limitLotteryNumberGame = LimitAutoLotteryNumberGame::find()->where([
@@ -394,7 +403,7 @@ class ApiPoyController extends Controller {
                         'thaiSharedGameId' => $thaiSharedGame->id,
                         'number' => $poy['number'],
                         'playTypeId' => $playType->id,
-                        ThaiSharedGameChitDetail::tableName().'.userId' => $userId,
+                        ThaiSharedGameChitDetail::tableName() . '.userId' => $userId,
                     ])->sum('amount');
                     if (isset($poyLists[$playType->code][$poy['number']])) {
                         $totalBuy = $totalAmount + $poyLists[$playType->code][$poy['number']] + $price;
@@ -408,7 +417,7 @@ class ApiPoyController extends Controller {
                         if ($limitBuy > 0) {
                             $message = 'ยอดแทงเกินกว่ายอดจำกัดจำนวนการแทงต่อสมาชิก';
                         } else {
-                            $message .= $playType->title.' เลข '.$poy['number'].' ปิดรับแทง <br>';
+                            $message .= $playType->title . ' เลข ' . $poy['number'] . ' ปิดรับแทง <br>';
                         }
                         $isLimitNumber = true;
                     }
@@ -418,17 +427,13 @@ class ApiPoyController extends Controller {
                 }
                 if ($setupLevelPlayType) {
                     $jackPotPerUnit = $setupLevelPlayType->jackPotPerUnit;
-                } 
-                else if ($whereLevelPlayType) {
+                } else if ($whereLevelPlayType) {
                     $jackPotPerUnit =  $whereLevelPlayType->jackPotPerUnit;
-                } 
-                else if ($setupLevelPlayTypeMaxPaid) {
+                } else if ($setupLevelPlayTypeMaxPaid) {
                     $jackPotPerUnit = $setupLevelPlayTypeMaxPaid->jackPotPerUnit;
-                } 
-                else if ($maximumPaid) {
+                } else if ($maximumPaid) {
                     $jackPotPerUnit =  $maximumPaid->jackPotPerUnit;
-                } 
-                else {
+                } else {
                     $discountGame = DiscountGame::find()->where([
                         'playTypeId' => $playType->id,
                         'title' => $thaiSharedGame->title,
@@ -529,7 +534,7 @@ class ApiPoyController extends Controller {
                     throw new ServerErrorHttpException('Can Not Update ThaiSharedGameChit');
                 }
                 //create transection
-                $reason = 'แทงพนัน ' . $thaiSharedGame->title . ' / ' . date('d/m/Y') . ' #' . $thaiSharedGame->gameId.$thaiSharedGameChit->id;
+                $reason = 'แทงพนัน ' . $thaiSharedGame->title . ' / ' . date('d/m/Y') . ' #' . $thaiSharedGame->gameId . $thaiSharedGameChit->id;
                 if ($thaiSharedGameChit->totalDiscount > 0) {
                     $resutl = Credit::creditWalk(Constants::action_credit_withdraw, $userId, $userId, Constants::reason_credit_bet_play, $thaiSharedGameChit->totalDiscount, $reason);
                 } else {
@@ -556,16 +561,16 @@ class ApiPoyController extends Controller {
         Yii::$app->response->format = Response::FORMAT_JSON;
         $userId = Yii::$app->user->id;
         if (Yii::$app->request->isPost) {
-//            $checkQueueProcess = Queue::find()->where([
-//                'userId' => $userId,
-//                'status' => Constants::status_active
-//            ])->count();
-//            if ($checkQueueProcess) {
-//                return [
-//                    'result' => 'ERROR',
-//                    'message' => 'ระบบกำลังประมวลผลอยู่ กรุณาแทงใหม่อีกครั้ง ภายใน 60 วินาที',
-//                ];
-//            }
+            //            $checkQueueProcess = Queue::find()->where([
+            //                'userId' => $userId,
+            //                'status' => Constants::status_active
+            //            ])->count();
+            //            if ($checkQueueProcess) {
+            //                return [
+            //                    'result' => 'ERROR',
+            //                    'message' => 'ระบบกำลังประมวลผลอยู่ กรุณาแทงใหม่อีกครั้ง ภายใน 60 วินาที',
+            //                ];
+            //            }
             $poy = Yii::$app->request->post('poy');
             $poys = json_decode($poy, true);
             $yeekeeGame = Yeekee::find()->andWhere('NOW() >= start_at AND finish_at >= NOW()')->andWhere(['id' => $poys['bet_id'], 'status' => 1])->one();
@@ -673,7 +678,6 @@ class ApiPoyController extends Controller {
                 $yeekeeChit->status = Constants::status_playing;
                 if (!$yeekeeChit->save()) {
                     throw new ServerErrorHttpException('Can Not Save Yeekee Chit');
-
                 }
                 foreach ($poys['poy_list'] as $poy) {
                     $code = PlayType::instance()->getReConvertPlayTypeCode($poy['option']);
@@ -739,9 +743,9 @@ class ApiPoyController extends Controller {
 
             $yeekeePost = YeekeePost::find()->where(['yeekee_id' => $ynum['id'], 'username' => Yii::$app->user->identity->username])->orderBy('create_at DESC')->one();
             $now = strtotime(date('Y-m-d H:i:s'));
-            if (!isset($yeekeePost->create_at)){
+            if (!isset($yeekeePost->create_at)) {
                 $savedTime = strtotime(date("Y-m-d H:i:s", strtotime("-15 second")));
-            }else{
+            } else {
                 $savedTime = strtotime($yeekeePost->create_at);
             }
             if (strtotime("-9 second") >  $savedTime) {
@@ -762,7 +766,7 @@ class ApiPoyController extends Controller {
                 return [
                     'data' => 'SUCCESS'
                 ];
-            }else{
+            } else {
                 return [
                     'data' => 'TIME_AWAIT'
                 ];
@@ -783,10 +787,10 @@ class ApiPoyController extends Controller {
             foreach ($yeekeePosts as $key => $yeekeePost) {
                 $split_postname = str_split($yeekeePost->post_name);
                 $username = '';
-                for ($i =0; $i < count($split_postname); $i++) {
-                    if($i === 2 || $i === 3 || $i === 4) {
+                for ($i = 0; $i < count($split_postname); $i++) {
+                    if ($i === 2 || $i === 3 || $i === 4) {
                         $username .= '*';
-                    }else{
+                    } else {
                         $username .= $split_postname[$i];
                     }
                 }
@@ -819,7 +823,7 @@ class ApiPoyController extends Controller {
 
         $sum = 0;
         foreach ($yeekeePost as $post) {
-            $sum += $post ['post_num'];
+            $sum += $post['post_num'];
         }
         return $sum;
     }
