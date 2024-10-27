@@ -271,10 +271,19 @@ class PostCreditTransectionController extends Controller
             $model->remark = $params['note'];
             $model->create_by = $userId;
             $model->post_requir_time = date('Y-m-d H:i:s');
-            if (!$model->save()) {
+            $model->channel = '';
+
+            try {
+                $model->save();
                 return $this->render('create_withdraw', [
                     'user' => $user,
                 ]);
+            } catch (\Exception $e) {
+                return $this->redirect(['withdraw', 'message' => $e]);
+                throw $e;
+            }
+
+            if (!$model->save()) {
             }
             return $this->render('withdraw_success');
         }
