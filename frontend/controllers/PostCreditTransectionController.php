@@ -157,11 +157,11 @@ class PostCreditTransectionController extends Controller
             ];
         }
         if ($params) {
-            $money = str_replace( ',', '', $params['money']);
-            $decimal = str_replace( ',', '', $params['decimal']);
-            $amount = number_format($money.'.'.$decimal, 2);
+            $money = str_replace(',', '', $params['money']);
+            $decimal = str_replace(',', '', $params['decimal']);
+            $amount = number_format($money . '.' . $decimal, 2);
             $date = \DateTime::createFromFormat('d/m/Y', $params['date']);
-            $post_requir_time = $date->format('Y-m-d') ." ". $params['time']. ":00";
+            $post_requir_time = $date->format('Y-m-d') . " " . $params['time'] . ":00";
             $bankSystem = explode('-', $params['svbank']);
             $userHasBank = UserHasBank::find()->where(['id' => $bankSystem[0]])->one();
             $transaction = Yii::$app->db->beginTransaction();
@@ -277,7 +277,6 @@ class PostCreditTransectionController extends Controller
                 ]);
             }
             return $this->render('withdraw_success');
-
         }
         return $this->render('create_withdraw', [
             'user' => $user,
