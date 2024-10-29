@@ -11,7 +11,7 @@ function sleep(ms) {
 }
 
 $(document).ready(function () {
-    
+
     $(".yeekee__number").hide();
     $(".yeekee__lists-number").hide();
     $('[data-id=numpage_1]').addClass("active");
@@ -23,84 +23,84 @@ $(document).ready(function () {
 
     window.localStorage.setItem('poy', JSON.stringify(poyList));
 
-		var poy = JSON.parse(window.localStorage.getItem('poy'));
-		$.each(poy.poy_list, function (index, value) {
-			if (value.last_add_num > last_add_num) {
-				last_add_num = value.last_add_num;
-			}
-		});
-
-		$(".btn-cancle-last-add-num").on("click", function(){
-			var poy = JSON.parse(window.localStorage.getItem('poy'));
-			if (poy.poy_list.length == 0 || last_add_num == 0) return;
-      delete_last_add_num();
+    var poy = JSON.parse(window.localStorage.getItem('poy'));
+    $.each(poy.poy_list, function (index, value) {
+        if (value.last_add_num > last_add_num) {
+            last_add_num = value.last_add_num;
+        }
     });
 
-		$(".btn-reset").on("click", function(){
-			var poy = JSON.parse(window.localStorage.getItem('poy'));
-			if (poy.poy_list.length == 0) return;
+    $(".btn-cancle-last-add-num").on("click", function () {
+        var poy = JSON.parse(window.localStorage.getItem('poy'));
+        if (poy.poy_list.length == 0 || last_add_num == 0) return;
+        delete_last_add_num();
+    });
+
+    $(".btn-reset").on("click", function () {
+        var poy = JSON.parse(window.localStorage.getItem('poy'));
+        if (poy.poy_list.length == 0) return;
         $("#modal_confirm_reset").modal('show');
     });
 
-		$('.mypoy').click(function() {
-			if (!get_mypoy) {
-				get_my_poy();
-				get_mypoy = true;
-			}
-		});
-        $('.triggerPoy').click(function() {
-      // var poy = JSON.parse(window.localStorage.getItem('poy'));
-      // if (poy.poy_list.length > 0) return;
+    $('.mypoy').click(function () {
+        if (!get_mypoy) {
+            get_my_poy();
+            get_mypoy = true;
+        }
+    });
+    $('.triggerPoy').click(function () {
+        // var poy = JSON.parse(window.localStorage.getItem('poy'));
+        // if (poy.poy_list.length > 0) return;
 
 
-			if (!get_mysetnumber) {
-				get_my_set_number();
-				get_mysetnumber = true;
-			}
+        if (!get_mysetnumber) {
+            get_my_set_number();
+            get_mysetnumber = true;
+        }
 
-       $('#poy').toggleClass('open');
-        if($('#poy').hasClass('open')){
+        $('#poy').toggleClass('open');
+        if ($('#poy').hasClass('open')) {
             $('#footer-member').addClass('d-none');
         }
-      $('#content').toggleClass('blur');
+        $('#content').toggleClass('blur');
         var fixbot1 = $('#poy .fixbot').height();
         var wh = $(window).height();
-        var fixbott1 = wh-fixbot1-50;
-        $('#poy .content-scroll').css('height',fixbott1);
-       return false;
+        var fixbott1 = wh - fixbot1 - 50;
+        $('#poy .content-scroll').css('height', fixbott1);
+        return false;
     });
-    $('.triggerPrice').click(function() {
-      var poy = JSON.parse(window.localStorage.getItem('poy'));
-      if (poy.poy_list.length == 0) return;
+    $('.triggerPrice').click(function () {
+        var poy = JSON.parse(window.localStorage.getItem('poy'));
+        if (poy.poy_list.length == 0) return;
         $('#price').toggleClass('open');
-        if($('#price').hasClass('open')){
+        if ($('#price').hasClass('open')) {
             $('#footer-member').addClass('d-none');
         }
-       $('#content').toggleClass('blur');
+        $('#content').toggleClass('blur');
         var fixbot11 = $('#price .fixbot').height();
         var wh = $(window).height();
-        var fixbott11 = wh-fixbot11-50;
-        $('#price .content-scroll').css('height',fixbott11);
+        var fixbott11 = wh - fixbot11 - 50;
+        $('#price .content-scroll').css('height', fixbott11);
         return false;
-     });
-
-		 $('.triggerSendpoy').click(function() {
-
-       pre_send_poy();
-             $('.triggerSendpoy').prop('disabled', true);
-      });
-
-
-
-    $('.betagain').click(function() {
-      $('#printpoy').removeClass('open');
-      $('#content').removeClass('blur');
     });
 
-     $("#capturePoy").click(function() {
-        $(".content").css('height','100%');
+    $('.triggerSendpoy').click(function () {
+
+        pre_send_poy();
+        $('.triggerSendpoy').prop('disabled', true);
+    });
+
+
+
+    $('.betagain').click(function () {
+        $('#printpoy').removeClass('open');
+        $('#content').removeClass('blur');
+    });
+
+    $("#capturePoy").click(function () {
+        $(".content").css('height', '100%');
         html2canvas($("#capture"), {
-            onrendered: function(canvas) {
+            onrendered: function (canvas) {
                 var image = canvas.toDataURL("image/png");
                 download(image, "fifalotto_poy.png", "image/png");
                 $(".content").removeAttr('style');
@@ -108,125 +108,125 @@ $(document).ready(function () {
         });
     });
 
-		$('.btn-tanghuay,.option2btn').on('click',function(){
+    $('.btn-tanghuay,.option2btn').on('click', function () {
         var btid = $(this).attr('id');
-        var labelid = '#'+btid+'_label';
-        if($(labelid).hasClass("d-none")){
+        var labelid = '#' + btid + '_label';
+        if ($(labelid).hasClass("d-none")) {
             $(labelid).removeClass("d-none");
-        }else{
+        } else {
             $(labelid).addClass("d-none");
         }
     });
 
-		if (ying_only) {
-			//alert('ying_only');
-			$('[data-id=numpage_1]').addClass("d-none");
-			$('[data-id=numpage_2]').addClass("d-none");
-			$('#numpage_2').removeClass("d-none");
-			$('#numpage_1').addClass("d-none");
-			$('#show_poy_list').removeClass("d-flex");
-			$(".box__play").hide();
-			$(".yeekee__number").show();
-			$(".yeekee__lists-number").show();
-			$(".cart-item-lists").hide();
-		}
+    if (ying_only) {
+        //alert('ying_only');
+        $('[data-id=numpage_1]').addClass("d-none");
+        $('[data-id=numpage_2]').addClass("d-none");
+        $('#numpage_2').removeClass("d-none");
+        $('#numpage_1').addClass("d-none");
+        $('#show_poy_list').removeClass("d-flex");
+        $(".box__play").hide();
+        $(".yeekee__number").show();
+        $(".yeekee__lists-number").show();
+        $(".cart-item-lists").hide();
+    }
 
-        $('#teng_bon_3').click();
+    $('#teng_bon_3').click();
 
-		$(".btn-panghuay").click(function (e) {
-				//console.info($(this).prop('id')+' active= '+$(this).hasClass("active"));
-				$('.btn-tanghuay#'+$(this).prop('id')).click();
-		});
-		$(".panghuay_number").on("click", function(){
-			if ($(this).hasClass("active")) {
-				delete_the_num($(this).data("id").toString());
-			} else {
-				var check_option_number = false;
-
-				//$('.panghuay_number[data-id="'+$(this).data("id")+'"]').addClass('active');
-				for (var i = 0; i <= curr_option.length - 1; i++) {
-		        if (curr_option[i].slice(-1)*1 === $(this).data("id").toString().length) {
-								check_option_number = true;
-		            break;
-		        }
-		    }
-				if (check_option_number) {
-						prepare_poy($(this).data("id").toString());
-				} else {
-					return false;
-				}
-			}
-			define_poy($(this).data("id").toString());
+    $(".btn-panghuay").click(function (e) {
+        //console.info($(this).prop('id')+' active= '+$(this).hasClass("active"));
+        $('.btn-tanghuay#' + $(this).prop('id')).click();
     });
-		$(".panghuay_option_2").on("click", function(){
-			//console.log($(this).data("option"),$(this).data("id").toString());
-			if ($('.btn-panghuay#teng_bon_2').hasClass("active")===false && $('.btn-tanghuay#teng_lang_2').hasClass("active")===false) {
-				//console.log('teng_bon_2 teng_lang_2 == false');
-				return false;
-			}
-			if ($('#'+$(this).data('option')+'_label').hasClass('d-none')) {
-				$('.bet_two.option2btn#'+$(this).data('option')).click();
-			}
-			if ($(this).hasClass("active")) {
-				//console.log('delete_num_option2',$(this).data('option'),$(this).data("id").toString());
-				delete_num_option2($(this).data('option'),$(this).data("id").toString());
-			} else {
-				prepare_poy($(this).data("id").toString());
-			}
-			if ($('#'+$(this).data('option')+'_label').hasClass('d-none')==false) {
-				$('.bet_two.option2btn#'+$(this).data('option')).click();
-			}
-			define_poy();
+    $(".panghuay_number").on("click", function () {
+        if ($(this).hasClass("active")) {
+            delete_the_num($(this).data("id").toString());
+        } else {
+            var check_option_number = false;
+
+            //$('.panghuay_number[data-id="'+$(this).data("id")+'"]').addClass('active');
+            for (var i = 0; i <= curr_option.length - 1; i++) {
+                if (curr_option[i].slice(-1) * 1 === $(this).data("id").toString().length) {
+                    check_option_number = true;
+                    break;
+                }
+            }
+            if (check_option_number) {
+                prepare_poy($(this).data("id").toString());
+            } else {
+                return false;
+            }
+        }
+        define_poy($(this).data("id").toString());
+    });
+    $(".panghuay_option_2").on("click", function () {
+        //console.log($(this).data("option"),$(this).data("id").toString());
+        if ($('.btn-panghuay#teng_bon_2').hasClass("active") === false && $('.btn-tanghuay#teng_lang_2').hasClass("active") === false) {
+            //console.log('teng_bon_2 teng_lang_2 == false');
+            return false;
+        }
+        if ($('#' + $(this).data('option') + '_label').hasClass('d-none')) {
+            $('.bet_two.option2btn#' + $(this).data('option')).click();
+        }
+        if ($(this).hasClass("active")) {
+            //console.log('delete_num_option2',$(this).data('option'),$(this).data("id").toString());
+            delete_num_option2($(this).data('option'), $(this).data("id").toString());
+        } else {
+            prepare_poy($(this).data("id").toString());
+        }
+        if ($('#' + $(this).data('option') + '_label').hasClass('d-none') == false) {
+            $('.bet_two.option2btn#' + $(this).data('option')).click();
+        }
+        define_poy();
     });
 
-		$('#search-number').on('input paste', function () {
-		    $("#numlist-tabContent1 div.column").removeClass("d-inline");
-		    $("#numlist-tabContent1 div.column").hide();
-		    $("#numlist-tabContent1 label:contains('" + $(this).val() + "')").parent().show();
-		    $("#numlist-tabContent1 label:contains('" + $(this).val() + "')").parent().addClass("d-inline");
-		});
+    $('#search-number').on('input paste', function () {
+        $("#numlist-tabContent1 div.column").removeClass("d-inline");
+        $("#numlist-tabContent1 div.column").hide();
+        $("#numlist-tabContent1 label:contains('" + $(this).val() + "')").parent().show();
+        $("#numlist-tabContent1 label:contains('" + $(this).val() + "')").parent().addClass("d-inline");
+    });
 
-		$('#search-number2').on('input paste', function () {
-		    $("#numlist-tabContent2 div.column").removeClass("d-inline");
-		    $("#numlist-tabContent2 div.column").hide();
-		    $("#numlist-tabContent2 label:contains('" + $(this).val() + "')").parent().show();
-		    $("#numlist-tabContent2 label:contains('" + $(this).val() + "')").parent().addClass("d-inline");
-		});
+    $('#search-number2').on('input paste', function () {
+        $("#numlist-tabContent2 div.column").removeClass("d-inline");
+        $("#numlist-tabContent2 div.column").hide();
+        $("#numlist-tabContent2 label:contains('" + $(this).val() + "')").parent().show();
+        $("#numlist-tabContent2 label:contains('" + $(this).val() + "')").parent().addClass("d-inline");
+    });
 
-		$('#search-number3').on('input paste', function () {
-		    $("#numlist-tabContent3 div.column").hide();
-		    $("#numlist-tabContent3 label:contains('" + $(this).val() + "')").parent().show();
-		});
+    $('#search-number3').on('input paste', function () {
+        $("#numlist-tabContent3 div.column").hide();
+        $("#numlist-tabContent3 label:contains('" + $(this).val() + "')").parent().show();
+    });
 
-        $('#teng_bon_3').click();
-        $('#teng_bon_3').click();
+    $('#teng_bon_3').click();
+    $('#teng_bon_3').click();
 
 });
 
 
-function define_poy(num=null) {
+function define_poy(num = null) {
 
     var bld = JSON.parse(bet_list_detail);
     //console.log('bld',bld);
     $('.bet_name').html(bld.bet_name);
     $('.bet_round').html(bld.bet_round);
 
-		var poy = JSON.parse(window.localStorage.getItem('poy'));
+    var poy = JSON.parse(window.localStorage.getItem('poy'));
 
     if (!poy || poy.bet_id != bld.bet_id) {
         reset_poy();
     } else {
-			$.each(poy.poy_list, function (index, value) {
-				if (poy.poy_list[index].number != num) {
-					if ($('.panghuay_number[data-id="'+poy.poy_list[index].number+'"]').hasClass('active')) {
-						//console.log('already active',poy.poy_list[index].number);
-					} else {
-						//console.log('set active -> ',poy.poy_list[index].number);
-						$('.panghuay_number[data-id="'+poy.poy_list[index].number+'"]').addClass('active');
-					}
-				}
-			});
-		}
+        $.each(poy.poy_list, function (index, value) {
+            if (poy.poy_list[index].number != num) {
+                if ($('.panghuay_number[data-id="' + poy.poy_list[index].number + '"]').hasClass('active')) {
+                    //console.log('already active',poy.poy_list[index].number);
+                } else {
+                    //console.log('set active -> ',poy.poy_list[index].number);
+                    $('.panghuay_number[data-id="' + poy.poy_list[index].number + '"]').addClass('active');
+                }
+            }
+        });
+    }
 }
 
 function reset_poy() {
@@ -235,9 +235,9 @@ function reset_poy() {
         'bet_id': bld.bet_id,
         'poy_list': [],
     }));
-	last_add_num = 0;
+    last_add_num = 0;
     show_bet_num();
-	$('.panghuay_number').removeClass('active');
+    $('.panghuay_number').removeClass('active');
 }
 
 var gen_2_ble = ['00', '11', '22', '33', '44', '55', '66', '77', '88', '99'];
@@ -257,9 +257,9 @@ $(main_box_button).click(function () {
         return;
     }
 
-	  if ($(this).hasClass("active")) {
+    if ($(this).hasClass("active")) {
         $(this).removeClass("active");
-				$('.btn-panghuay#'+$(this).prop('id')).removeClass("active");
+        $('.btn-panghuay#' + $(this).prop('id')).removeClass("active");
         $("#content_" + $(this).data('id')).hide();
         remove_option($(this).prop('id'));
         showhide_keyboard();
@@ -267,7 +267,7 @@ $(main_box_button).click(function () {
 
     } else {
         $(this).addClass("active");
-				$('.btn-panghuay#'+$(this).prop('id')).addClass("active");
+        $('.btn-panghuay#' + $(this).prop('id')).addClass("active");
         check_conflict($(this).prop('id'));
         showhide_keyboard();
         two_option();
@@ -294,9 +294,9 @@ function two_option() {
         $('.box__show-number .lists .number').eq(1).removeClass("bet_two_ative");
         $('.box__show-number .lists .number').eq(2).removeClass("bet_two_ative");
         $(".box__two-option").hide();
-				if ($.inArray( "option_2_19" , curr_option ) >= 0) { remove_option("option_2_19"); }
-        if ($.inArray( "option_2_roodnha" , curr_option ) >= 0) { remove_option("option_2_roodnha"); }
-				if ($.inArray( "option_2_roodlung" , curr_option ) >= 0) { remove_option("option_2_roodlung"); }
+        if ($.inArray("option_2_19", curr_option) >= 0) { remove_option("option_2_19"); }
+        if ($.inArray("option_2_roodnha", curr_option) >= 0) { remove_option("option_2_roodnha"); }
+        if ($.inArray("option_2_roodlung", curr_option) >= 0) { remove_option("option_2_roodlung"); }
     } else {
         $('.box__show-number .lists .number').eq(1).addClass("bet_two_ative");
         $('.box__show-number .lists .number').eq(2).addClass("bet_two_ative");
@@ -317,12 +317,12 @@ function showhide_keyboard() {
         showhide = false;
     }
 
-		$("#oversamtua").addClass("overlay-disable");
-		$("#ninetybtn").addClass("overlay-disable");
-		$("#roodfrontbtn").addClass("overlay-disable");
-		$("#roodbackbtn").addClass("overlay-disable");
-		$("#twonumberbtn").addClass("overlay-disable");
-		$("#runnumberbtn").addClass("overlay-disable");
+    $("#oversamtua").addClass("overlay-disable");
+    $("#ninetybtn").addClass("overlay-disable");
+    $("#roodfrontbtn").addClass("overlay-disable");
+    $("#roodbackbtn").addClass("overlay-disable");
+    $("#twonumberbtn").addClass("overlay-disable");
+    $("#runnumberbtn").addClass("overlay-disable");
 
     if (showhide) {
         $("#content_lottery").show();
@@ -330,27 +330,27 @@ function showhide_keyboard() {
 
         if ($.inArray("teng_bon_1", curr_option) >= 0 || $.inArray("teng_lang_1", curr_option) >= 0 || $.inArray("option_2_19", curr_option) >= 0 || $.inArray("option_2_roodnha", curr_option) >= 0 || $.inArray("option_2_roodlung", curr_option) >= 0) {
             set_show_num(1);
-						if ($.inArray("teng_bon_1", curr_option) >= 0 || $.inArray("teng_lang_1", curr_option) >= 0) {
-							$('#pills-run-tab').click();
-							$("#runnumberbtn").removeClass("overlay-disable");
-						} else {
-							$('#pills-2-tab').click();
-							$("#ninetybtn").removeClass("overlay-disable");
-							$("#roodfrontbtn").removeClass("overlay-disable");
-							$("#roodbackbtn").removeClass("overlay-disable");
-							$("#twonumberbtn").removeClass("overlay-disable");
-						}
+            if ($.inArray("teng_bon_1", curr_option) >= 0 || $.inArray("teng_lang_1", curr_option) >= 0) {
+                $('#pills-run-tab').click();
+                $("#runnumberbtn").removeClass("overlay-disable");
+            } else {
+                $('#pills-2-tab').click();
+                $("#ninetybtn").removeClass("overlay-disable");
+                $("#roodfrontbtn").removeClass("overlay-disable");
+                $("#roodbackbtn").removeClass("overlay-disable");
+                $("#twonumberbtn").removeClass("overlay-disable");
+            }
         } else if ($.inArray("teng_bon_3", curr_option) >= 0 || $.inArray("tode_3", curr_option) >= 0 || $.inArray("teng_lang_nha_3", curr_option) >= 0 || $.inArray("teng_lang_3", curr_option) >= 0) {
             set_show_num(3);
-						$('#pills-3-tab').click();
-						$("#oversamtua").removeClass("overlay-disable");
+            $('#pills-3-tab').click();
+            $("#oversamtua").removeClass("overlay-disable");
         } else {
             set_show_num(2);
-						$('#pills-2-tab').click();
-						$("#ninetybtn").removeClass("overlay-disable");
-						$("#roodfrontbtn").removeClass("overlay-disable");
-						$("#roodbackbtn").removeClass("overlay-disable");
-						$("#twonumberbtn").removeClass("overlay-disable");
+            $('#pills-2-tab').click();
+            $("#ninetybtn").removeClass("overlay-disable");
+            $("#roodfrontbtn").removeClass("overlay-disable");
+            $("#roodbackbtn").removeClass("overlay-disable");
+            $("#twonumberbtn").removeClass("overlay-disable");
 
         }
     } else {
@@ -366,7 +366,7 @@ function set_show_num(num) {
         $('#bet_num').append('<label class="number"> </label> ');
     }
     max_num = num;
-	cur_num = 0;
+    cur_num = 0;
 }
 
 var conflict_option = {
@@ -395,19 +395,19 @@ function check_conflict(option) {
 
     if (conflict_option[option].length > 0) {
         for (var i = 0; i <= conflict_option[option].length - 1; i++) {
-					  if ($.inArray( conflict_option[option][i] , curr_option ) >= 0) {
-	            remove_option(conflict_option[option][i]);
-	            $('#' + conflict_option[option][i]).removeClass("active");
-							$('.btn-panghuay#' + conflict_option[option][i]).removeClass("active");
+            if ($.inArray(conflict_option[option][i], curr_option) >= 0) {
+                remove_option(conflict_option[option][i]);
+                $('#' + conflict_option[option][i]).removeClass("active");
+                $('.btn-panghuay#' + conflict_option[option][i]).removeClass("active");
 
-			        var labelid2 = '#'+conflict_option[option][i]+'_label';
-							$(labelid2).addClass("d-none");
+                var labelid2 = '#' + conflict_option[option][i] + '_label';
+                $(labelid2).addClass("d-none");
 
-							$('#content_'+conflict_option[option][i]).addClass("d-none");
-						}
+                $('#content_' + conflict_option[option][i]).addClass("d-none");
+            }
         }
     }
-		$('#content_'+option).removeClass("d-none");
+    $('#content_' + option).removeClass("d-none");
     add_option(option);
 }
 
@@ -427,29 +427,29 @@ function remove_option(option) {
     }
 }
 
-$(document).keyup(async function(e) {
-    if($('#price').hasClass('pagemodal-wrapper open')) return true;
-    if($('#printpoy').hasClass('pagemodal-wrapper open')) return true;
-    if($('#sendpoy').hasClass('pagemodal-wrapper open')) return true;
-    if($('#numpage_1').hasClass('d-none')) return true;
-    if($('#nav-panghuay-tab').hasClass('active')) return true;
+$(document).keyup(async function (e) {
+    if ($('#price').hasClass('pagemodal-wrapper open')) return true;
+    if ($('#printpoy').hasClass('pagemodal-wrapper open')) return true;
+    if ($('#sendpoy').hasClass('pagemodal-wrapper open')) return true;
+    if ($('#numpage_1').hasClass('d-none')) return true;
+    if ($('#nav-panghuay-tab').hasClass('active')) return true;
 
 
     let chr;
     if (e.keyCode >= 48 && e.keyCode <= 57) {
         let keyCode = e.keyCode;
         let chrCode = keyCode - 48 * Math.floor(keyCode / 48);
-        chr = String.fromCharCode((96 <= keyCode) ? chrCode: keyCode);
+        chr = String.fromCharCode((96 <= keyCode) ? chrCode : keyCode);
     }
-    if((e.keyCode >= 96 && e.keyCode <= 105) || (e.keyCode === 8)){
+    if ((e.keyCode >= 96 && e.keyCode <= 105) || (e.keyCode === 8)) {
         chr = e.key;
     }
     //console.info(chr);
-    if(chr){
+    if (chr) {
         if (cur_num <= 0) {
             cur_num = 0;
         }
-        if (chr === "Backspace" && cur_num <= (max_num-1)) {
+        if (chr === "Backspace" && cur_num <= (max_num - 1)) {
             $('.box__show-number .lists .number').eq(cur_num).html('');
             if (cur_num <= 0) {
                 $('.box__show-number .lists .number').eq(0).html('<span></span>');
@@ -459,7 +459,7 @@ $(document).keyup(async function(e) {
             cur_num--
         } else {
             var reg = new RegExp('^\\d+$');
-            if(!reg.test(chr)) return true;
+            if (!reg.test(chr)) return true;
             $('.box__show-number .lists .number').eq(cur_num).html(chr);
             $('.box__show-number .lists .number').eq(cur_num + 1).html('<span></span>');
             cur_num++
@@ -473,9 +473,9 @@ $(document).keyup(async function(e) {
             if (max_num > 1) num2 = $('.box__show-number .lists .number').eq(1).html();
             if (max_num > 2) num3 = $('.box__show-number .lists .number').eq(2).html();
             prepare_poy(num + num2 + num3);
-            airasia(num,num2,num3);
+            airasia(num, num2, num3);
 
-						$('.panghuay_number[data-id="'+num + num2 + num3+'"]').addClass('active');
+            $('.panghuay_number[data-id="' + num + num2 + num3 + '"]').addClass('active');
 
             $('.box__show-number .lists .number').html('');
         } else {
@@ -489,7 +489,7 @@ $('.box__show-number .box__keyboard button').click(async function () {
     if (cur_num <= 0) {
         cur_num = 0;
     }
-    if ($(this).data('id') == "delete" && cur_num <= (max_num-1)) {
+    if ($(this).data('id') == "delete" && cur_num <= (max_num - 1)) {
         $('.box__show-number .lists .number').eq(cur_num).html('');
         if (cur_num <= 0) {
             $('.box__show-number .lists .number').eq(0).html('<span></span>');
@@ -499,7 +499,7 @@ $('.box__show-number .box__keyboard button').click(async function () {
         cur_num--
     } else {
         var reg = new RegExp('^\\d+$');
-        if(!reg.test($(this).data('id'))) return true;
+        if (!reg.test($(this).data('id'))) return true;
         $('.box__show-number .lists .number').eq(cur_num).html($(this).data('id'));
         $('.box__show-number .lists .number').eq(cur_num + 1).html('<span></span>');
         cur_num++
@@ -519,7 +519,7 @@ $('.box__show-number .box__keyboard button').click(async function () {
         prepare_poy(num + num2 + num3);
         // airasia(num,num2,num3);
 
-				$('.panghuay_number[data-id="'+num + num2 + num3+'"]').addClass('active');
+        $('.panghuay_number[data-id="' + num + num2 + num3 + '"]').addClass('active');
 
         $('.box__show-number .lists .number').html('');
     } else {
@@ -752,7 +752,7 @@ var bet_title_list = {
 
 function show_bet_num() {
     var poy = JSON.parse(window.localStorage.getItem('poy'));
-    //console.log('show_bet_num',poy);
+    console.log(window.localStorage.getItem('poy'));
     if (poy.poy_list.length <= 0) {
         $('.bet_num_count').html('');
         $('#total_poy_list').html('');
@@ -888,98 +888,98 @@ function show_bet_num() {
 
 
 function delete_last_add_num() {
-	var poy = JSON.parse(window.localStorage.getItem('poy'));
-	if (poy.poy_list.length == 0) return;
-	var i = [];
-	$.each(poy.poy_list, function (index, value) {
-		if (poy.poy_list[index].last_add_num == last_add_num) {
-			i.push(index);
-		}
-	});
-	i.sort(function(a, b){return b-a});
-	$.each(i, function (index, value) {
-		$('.panghuay_number[data-id="'+poy.poy_list[value].number+'"]').removeClass('active');
-		poy.poy_list.splice(value, 1);
-	});
-	last_add_num = last_add_num-1;
-	window.localStorage.setItem('poy', JSON.stringify(poy));
-	show_bet_num();
+    var poy = JSON.parse(window.localStorage.getItem('poy'));
+    if (poy.poy_list.length == 0) return;
+    var i = [];
+    $.each(poy.poy_list, function (index, value) {
+        if (poy.poy_list[index].last_add_num == last_add_num) {
+            i.push(index);
+        }
+    });
+    i.sort(function (a, b) { return b - a });
+    $.each(i, function (index, value) {
+        $('.panghuay_number[data-id="' + poy.poy_list[value].number + '"]').removeClass('active');
+        poy.poy_list.splice(value, 1);
+    });
+    last_add_num = last_add_num - 1;
+    window.localStorage.setItem('poy', JSON.stringify(poy));
+    show_bet_num();
 }
 
 function delete_the_num(num) {
-	var poy = JSON.parse(window.localStorage.getItem('poy'));
-	if (poy.poy_list.length == 0) return;
-	var i = [];
-	var del_num = [];
-	if ($('#shuffle_2').hasClass('active')) {
-			del_num = $.merge(del_num, shuffle_num(num, 2));
-	} else if ($('#shuffle_3').hasClass('active')) {
-			del_num = $.merge(del_num, shuffle_num(num, 3));
-	} else {
-			del_num = $.merge(del_num,[num]);
-	}
+    var poy = JSON.parse(window.localStorage.getItem('poy'));
+    if (poy.poy_list.length == 0) return;
+    var i = [];
+    var del_num = [];
+    if ($('#shuffle_2').hasClass('active')) {
+        del_num = $.merge(del_num, shuffle_num(num, 2));
+    } else if ($('#shuffle_3').hasClass('active')) {
+        del_num = $.merge(del_num, shuffle_num(num, 3));
+    } else {
+        del_num = $.merge(del_num, [num]);
+    }
 
-	$.each(poy.poy_list, function (index, value) {
-		if ($.inArray(poy.poy_list[index].number, del_num)>=0 && poy.poy_list[index].option) {
-			//console.log(poy.poy_list[index].number+' == '+num+' -> '+index);
-			//$('.panghuay_number[data-id="'+num+'"]').removeClass('active');
-			i.push(index);
-		}
-	});
+    $.each(poy.poy_list, function (index, value) {
+        if ($.inArray(poy.poy_list[index].number, del_num) >= 0 && poy.poy_list[index].option) {
+            //console.log(poy.poy_list[index].number+' == '+num+' -> '+index);
+            //$('.panghuay_number[data-id="'+num+'"]').removeClass('active');
+            i.push(index);
+        }
+    });
 
-	i.sort(function(a, b){return b-a});
-	$.each(i, function (index, value) {
-		poy.poy_list.splice(value, 1);
-	});
+    i.sort(function (a, b) { return b - a });
+    $.each(i, function (index, value) {
+        poy.poy_list.splice(value, 1);
+    });
 
-	$.each(del_num, function (index, value) {
-		if (value!=num) {
-			$('.panghuay_number[data-id="'+value+'"]').removeClass('active');
-		}
-	});
-	window.localStorage.setItem('poy', JSON.stringify(poy));
-	show_bet_num();
+    $.each(del_num, function (index, value) {
+        if (value != num) {
+            $('.panghuay_number[data-id="' + value + '"]').removeClass('active');
+        }
+    });
+    window.localStorage.setItem('poy', JSON.stringify(poy));
+    show_bet_num();
 }
 
-function delete_num_option2(option,num) {
-	//console.log('delete_num_option2',option,num);
-	var poy = JSON.parse(window.localStorage.getItem('poy'));
-	if (poy.poy_list.length == 0) return;
-	var i = [];
-	var del_num = [];
+function delete_num_option2(option, num) {
+    //console.log('delete_num_option2',option,num);
+    var poy = JSON.parse(window.localStorage.getItem('poy'));
+    if (poy.poy_list.length == 0) return;
+    var i = [];
+    var del_num = [];
 
-	if (option === "option_2_19") {
-			del_num = $.merge(del_num, gen_19(num));
-	} else if (option === "option_2_roodnha") {
-			del_num = $.merge(del_num, rood_num(num, 'nha'));
-	} else if (option === "option_2_roodlung") {
-			del_num = $.merge(del_num, rood_num(num, 'lung'));
-	}
-	//console.log(del_num);
-	bon_lang_2 = ['teng_bon_2','teng_lang_2'];
-	$.each(bon_lang_2, function (opti, curr_opt) {
-		if (curr_opt!=option) {
-			var run_del_num = [];
-			run_del_num = $.merge(run_del_num, del_num);
-			$.each(poy.poy_list, function (index, value) {
-				if ($.inArray(poy.poy_list[index].number, run_del_num)>=0 && poy.poy_list[index].option==curr_opt) {
-					//console.log('inarray',poy.poy_list[index].option,$.inArray(poy.poy_list[index].number, run_del_num));
-					run_del_num.splice( $.inArray(poy.poy_list[index].number, run_del_num), 1 );
-					i.push(index);
-				}
-			});
-		}
-	});
-	i.sort(function(a, b){return b-a});
-	$.each(i, function (index, value) {
-		poy.poy_list.splice(value, 1);
-	});
-	$.each(del_num, function (index, value) {
-		$('.panghuay_number[data-id="'+value+'"]').removeClass('active');
-	});
+    if (option === "option_2_19") {
+        del_num = $.merge(del_num, gen_19(num));
+    } else if (option === "option_2_roodnha") {
+        del_num = $.merge(del_num, rood_num(num, 'nha'));
+    } else if (option === "option_2_roodlung") {
+        del_num = $.merge(del_num, rood_num(num, 'lung'));
+    }
+    //console.log(del_num);
+    bon_lang_2 = ['teng_bon_2', 'teng_lang_2'];
+    $.each(bon_lang_2, function (opti, curr_opt) {
+        if (curr_opt != option) {
+            var run_del_num = [];
+            run_del_num = $.merge(run_del_num, del_num);
+            $.each(poy.poy_list, function (index, value) {
+                if ($.inArray(poy.poy_list[index].number, run_del_num) >= 0 && poy.poy_list[index].option == curr_opt) {
+                    //console.log('inarray',poy.poy_list[index].option,$.inArray(poy.poy_list[index].number, run_del_num));
+                    run_del_num.splice($.inArray(poy.poy_list[index].number, run_del_num), 1);
+                    i.push(index);
+                }
+            });
+        }
+    });
+    i.sort(function (a, b) { return b - a });
+    $.each(i, function (index, value) {
+        poy.poy_list.splice(value, 1);
+    });
+    $.each(del_num, function (index, value) {
+        $('.panghuay_number[data-id="' + value + '"]').removeClass('active');
+    });
 
-	window.localStorage.setItem('poy', JSON.stringify(poy));
-	show_bet_num();
+    window.localStorage.setItem('poy', JSON.stringify(poy));
+    show_bet_num();
 }
 
 
@@ -1090,8 +1090,8 @@ var modalConfirm_reset = function (callback) {
     });
 };
 
-modalConfirm_reset(function(confirm){
-    if(confirm){
+modalConfirm_reset(function (confirm) {
+    if (confirm) {
         reset_poy_confirm();
     }
 });
@@ -1233,7 +1233,7 @@ function pre_send_poy() {
                 notify('ขั้นต่ำในการแทงไม่ตรงตามเงื่อนไขที่กำหนด', "error");
             } else if (d.result == 'MAXBETUSER') {
                 notify('ยอดแทงเกินกว่ายอดจำกัดจำนวนการแทงต่อสมาชิก', "error");
-            } else if (d.result == 'LIMIT_NUMBER'){
+            } else if (d.result == 'LIMIT_NUMBER') {
                 notify(d.message, "error");
                 var poy = JSON.parse(window.localStorage.getItem('poy'));
                 $.each(d.multiply_change, function (i, v) {
@@ -1251,7 +1251,7 @@ function pre_send_poy() {
                 var poy = JSON.parse(window.localStorage.getItem('poy'));
                 $.each(d.multiply_change, function (i, v) {
                     $.each(poy.poy_list, function (index, value) {
-                        if (typeof(v) != "undefined" && typeof(value) != "undefined") {
+                        if (typeof (v) != "undefined" && typeof (value) != "undefined") {
                             if (v.option == value.option && v.number == value.number) {
                                 if (v.multiply > 0) {
                                     poy.poy_list[index].multiply = v.multiply;
@@ -1268,9 +1268,9 @@ function pre_send_poy() {
                 notify('not allow', 'error');
             } else if (d.result == 'TIME_OUT') {
                 notify('หมดเวลาแทง', 'error');
-            } else if (d.result == 'BALANCE_NOT_ENOUGH'){
+            } else if (d.result == 'BALANCE_NOT_ENOUGH') {
                 notify('ยอดเงินของคุณไม่เพียงพอ', 'error');
-            } else if (d.result == 'CLOSE_NUMBER'){
+            } else if (d.result == 'CLOSE_NUMBER') {
                 var numbers = '';
                 $.each(d.multiply_change, function (i, v) {
                     if (v.is_close === true) {
@@ -1278,7 +1278,7 @@ function pre_send_poy() {
                         $("#pl_" + i).addClass('multiply-close');
                     }
                 });
-                notify('เลข '+numbers+' นี้ปิดรับแทง กรุณาลบรายการแล้ว กดส่งโพยอีกครั้ง', 'error');
+                notify('เลข ' + numbers + ' นี้ปิดรับแทง กรุณาลบรายการแล้ว กดส่งโพยอีกครั้ง', 'error');
             } else if (!testTab()) {
                 notify('กรุณาใช้งานเพียง tap เดียวเท่านั้น', 'error');
             } else if (d.result == 'SUCCESS') {
@@ -1353,9 +1353,9 @@ function send_poy() {
                 notify('not allow', 'error');
             } else if (d.result == 'TIME_OUT') {
                 notify('หมดเวลาแทง', 'error');
-            } else if (d.result == 'BALANCE_NOT_ENOUGH'){
+            } else if (d.result == 'BALANCE_NOT_ENOUGH') {
                 notify('ยอดเงินของคุณไม่เพียงพอ', 'error');
-            }  else if (d.result == 'CLOSE_NUMBER'){
+            } else if (d.result == 'CLOSE_NUMBER') {
                 var numbers = '';
                 $.each(d.multiply_change, function (i, v) {
                     if (v.is_close === true) {
@@ -1363,7 +1363,7 @@ function send_poy() {
                         $("#pl_" + i).addClass('multiply-close');
                     }
                 });
-                notify('เลข '+numbers+' นี้ปิดรับแทง', 'error');
+                notify('เลข ' + numbers + ' นี้ปิดรับแทง', 'error');
             } else if (d.result == 'SUCCESS') {
                 /*$.fancybox.open($('#popupSuccess'), {
                     touch: false,
@@ -1520,7 +1520,7 @@ $('.key-pad.box__keyboard.yeekee__number button').click(function () {
 
                     } else if (res.data == "ERROR") {
                         notify('กรุณาลองใหม่อีกครั้ง', "error");
-                    }else if (res.data == "TIME_AWAIT") {
+                    } else if (res.data == "TIME_AWAIT") {
                         notify('กรุณารอให้ครบเวลา', "error");
                     }
                 },
@@ -1563,7 +1563,7 @@ function LoadYingResult() {
     //console.log('LoadYingResult');
     var bld = JSON.parse(bet_list_detail);
     if (typeof yeekeeLoadNumberPostUrl === "undefined") {
-        return ;
+        return;
     }
     $.ajax({
         url: yeekeeLoadNumberPostUrl,
@@ -1675,8 +1675,8 @@ function pull_to_poy(pull_type, id) {
                         'multiply': v.multiply,
                         'is_duplicate': is_duplicate,
                     });
-                    $('.panghuay_number[data-id="'+v.number+'"]').addClass('active');
-                    $('.panghuay_number[data-id="'+v.number+'"]').addClass('active');
+                    $('.panghuay_number[data-id="' + v.number + '"]').addClass('active');
+                    $('.panghuay_number[data-id="' + v.number + '"]').addClass('active');
                 }
             });
             set_poy_list(add_poy_list);
