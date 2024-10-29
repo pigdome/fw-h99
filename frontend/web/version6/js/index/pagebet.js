@@ -664,24 +664,6 @@ function set_poy_list(add_poy_list) {
 
         poy.poy_list.push(v);
     });
-    poy.poy_list.sort(function (a, b) {
-        if (a.number < b.number) {
-            return -1;
-        } else if (a.number > b.number) {
-            return 1;
-        } else {
-            return 0;
-        }
-    });
-    poy.poy_list.sort(function (a, b) {
-        if (a.option < b.option) {
-            return -1;
-        } else if (a.option > b.option) {
-            return 1;
-        } else {
-            return 0;
-        }
-    });
     window.localStorage.setItem('poy', JSON.stringify(poy));
 }
 
