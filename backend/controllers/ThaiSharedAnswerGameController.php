@@ -52,7 +52,7 @@ class ThaiSharedAnswerGameController extends Controller
                     'tricker' => ['POST']
                 ],
             ],
-            'access'=> [
+            'access' => [
                 'class' => AccessControl::className(),
                 'rules' => [
                     [
@@ -166,10 +166,12 @@ class ThaiSharedAnswerGameController extends Controller
                         }
                     }
                 }
-                if ($thaiSharedGame->gameId === Constants::GSB_THAISHARD_GAME ||
+                if (
+                    $thaiSharedGame->gameId === Constants::GSB_THAISHARD_GAME ||
                     $thaiSharedGame->gameId === Constants::BACC_THAISHARD_GAME ||
                     $thaiSharedGame->gameId === Constants::LAOS_CHAMPASAK_LOTTERY_GAME ||
-                    $thaiSharedGame->gameId === Constants::LOTTERYRESERVEGAME) {
+                    $thaiSharedGame->gameId === Constants::LOTTERYRESERVEGAME
+                ) {
                     $thaiSharedGame->result = $model->result !== '' ? $model->result : null;
                     if (!$thaiSharedGame->save()) {
                         throw new ServerErrorHttpException('can not save result thai shared');
@@ -222,8 +224,10 @@ class ThaiSharedAnswerGameController extends Controller
                 'three_top',
                 'two_under',
             ];
-        } else if ($thaiSharedGame->gameId === Constants::GSB_THAISHARD_GAME || $thaiSharedGame->gameId === Constants::BACC_THAISHARD_GAME ||
-            $thaiSharedGame->gameId === Constants::LAOS_CHAMPASAK_LOTTERY_GAME || $thaiSharedGame->gameId === Constants::LOTTERYRESERVEGAME) {
+        } else if (
+            $thaiSharedGame->gameId === Constants::GSB_THAISHARD_GAME || $thaiSharedGame->gameId === Constants::BACC_THAISHARD_GAME ||
+            $thaiSharedGame->gameId === Constants::LAOS_CHAMPASAK_LOTTERY_GAME || $thaiSharedGame->gameId === Constants::LOTTERYRESERVEGAME
+        ) {
             $answers = [
                 'three_top',
                 'two_under',
@@ -351,10 +355,12 @@ class ThaiSharedAnswerGameController extends Controller
                         }
                     }
                 }
-                if ($thaiSharedGame->gameId === Constants::GSB_THAISHARD_GAME ||
+                if (
+                    $thaiSharedGame->gameId === Constants::GSB_THAISHARD_GAME ||
                     $thaiSharedGame->gameId === Constants::BACC_THAISHARD_GAME ||
                     $thaiSharedGame->gameId === Constants::LAOS_CHAMPASAK_LOTTERY_GAME ||
-                    $thaiSharedGame->gameId === Constants::LOTTERYRESERVEGAME) {
+                    $thaiSharedGame->gameId === Constants::LOTTERYRESERVEGAME
+                ) {
                     $thaiSharedGame->result = $model->result;
                     if (!$thaiSharedGame->save()) {
                         throw new ServerErrorHttpException('can not save result thai shared');
@@ -424,7 +430,7 @@ class ThaiSharedAnswerGameController extends Controller
             }
             $thaiSharedGameChitIds = [];
             $commissionUserAgentPlay = [];
-            if (!$thaiSharedGameChits){
+            if (!$thaiSharedGameChits) {
                 return ['message' => 'ไม่มีรอบที่ต้องออกผลแล้ว'];
             }
             $userIds = [];
@@ -481,11 +487,14 @@ class ThaiSharedAnswerGameController extends Controller
                     }
                 }
             }
-            ThaiSharedGameChitDetail::updateAll(['flag_result' => 0, 'win_credit' => 0],
-                ['AND',
+            ThaiSharedGameChitDetail::updateAll(
+                ['flag_result' => 0, 'win_credit' => 0],
+                [
+                    'AND',
                     'flag_result = 0',
                     ['IN', 'thaiSharedGameChitId', $thaiSharedGameChitIds]
-                ]);
+                ]
+            );
             Queue::updateAll(['status' => Constants::status_inactive], ['gameId' => $thaiSharedGame->gameId, 'userId' => $userIds]);
             $transaction->commit();
             return ['message' => 'success'];
@@ -503,8 +512,7 @@ class ThaiSharedAnswerGameController extends Controller
         if (!in_array('thai-shared-game-answer', $arrRoles)) {
             return 'คุณไม่มีสิทธิ์ในการออกผลเฉลย';
         }
-        $thaiSharedAnswerGames = ThaiSharedAnswerGame::find()->where(['thaiSharedGameId' => $id])->
-        joinWith('playType')->orderBy(PlayType::tableName() . '.jackpot_per_unit DESC')->groupBy('playTypeId, number')->all();
+        $thaiSharedAnswerGames = ThaiSharedAnswerGame::find()->where(['thaiSharedGameId' => $id])->joinWith('playType')->orderBy(PlayType::tableName() . '.jackpot_per_unit DESC')->groupBy('playTypeId, number')->all();
         $thaiSharedGame = ThaiSharedGame::find()->where(['id' => $id])->one();
         if ($thaiSharedGame->startDate >= date('Y-m-d H:i:s') || $thaiSharedGame->endDate > date('Y-m-d H:i:s')) {
             return 'ไม่สามารถออกผลได้เนื่องจากยังไม่สิ้นสุดเวลาหรือยังไม่สิ้นสุดเวลา';
@@ -588,11 +596,14 @@ class ThaiSharedAnswerGameController extends Controller
                     }
                 }
             }
-            ThaiSharedGameChitDetail::updateAll(['flag_result' => 0, 'win_credit' => 0],
-                ['AND',
+            ThaiSharedGameChitDetail::updateAll(
+                ['flag_result' => 0, 'win_credit' => 0],
+                [
+                    'AND',
                     'flag_result = 0',
                     ['IN', 'thaiSharedGameChitId', $thaiSharedGameChitIds]
-                ]);
+                ]
+            );
 
             Queue::updateAll(['status' => Constants::status_inactive], ['gameId' => $thaiSharedGame->gameId, 'userId' => $userIds]);
             $transaction->commit();
@@ -742,7 +753,7 @@ class ThaiSharedAnswerGameController extends Controller
             return Constants::permute($number);
         } else if ($playType === 'three_ft') {
             return substr($number, 0, 3);
-        }else if ($playType === 'three_top') {
+        } else if ($playType === 'three_top') {
             return substr($number, 1, 3);
         } else if ($playType === 'three_tod') {
             $number = substr($number, 1, 3);
