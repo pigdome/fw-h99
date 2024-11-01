@@ -79,7 +79,7 @@ class ThaiSharedAnswerGameController extends Controller
         }
         $thaiSharedAnswerGame = ThaiSharedAnswerGame::find()->where(['thaiSharedGameId' => $id])->count();
         if ($thaiSharedAnswerGame) {
-            throw new ServerErrorHttpException('หวยหุ้นนี้ถูกสร้างแล้วไม่สามารสร้างเฉลยซ้ำได้');
+            return $this->redirect(['update', 'id' => $id]);
         }
         $model = new ThaiSharedAnswerGameForm();
         $thaiSharedGame = ThaiSharedGame::findOne(['id' => $id]);
