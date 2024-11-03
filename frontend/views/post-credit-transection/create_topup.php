@@ -17,9 +17,10 @@ $this->registerJsFile(Yii::getAlias('@web/version6/js/moment-timezone-with-data-
 $this->registerJsFile(Yii::getAlias('@web/version6/js/index/deposit.js?1563021630'), ['depends' => [\yii\web\JqueryAsset::className()]]);
 $this->registerJsFile(Yii::getAlias('@web/version6/js/tempusdominus-bootstrap-4.js'), ['depends' => [\yii\web\JqueryAsset::className()]]);
 $this->registerJsFile(Yii::getAlias('@web/version6/js/clipboard.min.js'), ['depends' => [\yii\web\JqueryAsset::className()]]);
+$this->registerJsFile(Yii::getAlias('@web/version6/js/jquery-3.3.1.min.js'));
+$this->registerJsFile(Yii::getAlias('@web/version6/js/upload.js'));
 $this->registerCssFile(Yii::getAlias('@web/version6/css/spacing.css'));
 $this->registerCssFile(Yii::getAlias('@web/version6/css/tempusdominus-bootstrap-4.min.css'));
-
 
 $js = <<<EOT
 var clipboard = new ClipboardJS('.btn');
@@ -268,33 +269,37 @@ $this->registerJs($js);
                                             </div>
                                         </div>
                                         <div class="col-12">
-                                            <small class="text-danger mt-2"
-                                                style="display: inline-block;line-height: 1.2;">
-                                                * กรุณากรอก วัน-เวลา ในการโอนให้ตรงกับ Slip
-                                                ระบบจะเติมเครดิตให้คุณอัตโนมัติ
-                                            </small>
-                                            <br>
-                                            <label class="mt-2"><i class="far fa-star"></i> หมายเหตุ</label>
-                                            <textarea name="note" id="note" cols="30" rows="2"
-                                                class="form-control"></textarea>
+                                            <label class="mt-2"><i class="far fa-image"></i> สลิป</label>
+                                            <input type="file" class="imageupload">
+                                            <input type="hidden" name="evidence" id="evidence">
+                                            <div class="col-12">
+                                                <small class="text-danger mt-2"
+                                                    style="display: inline-block;line-height: 1.2;">
+                                                    * กรุณากรอก วัน-เวลา ในการโอนให้ตรงกับ Slip
+                                                    ระบบจะเติมเครดิตให้คุณอัตโนมัติ
+                                                </small>
+                                                <br>
+                                                <label class="mt-2"><i class="far fa-star"></i> หมายเหตุ</label>
+                                                <textarea name="note" id="note" cols="30" rows="2"
+                                                    class="form-control"></textarea>
+                                            </div>
+                                            <div class="col-12 mb-2">
+                                                <small>กรุณาตรวจสอบข้อมูลของท่านให้ถูกต้อง และกดปุ่ม <span
+                                                        class="text-success">ยืนยันการแจ้งโอนเงิน</span>
+                                                </small>
+                                            </div>
                                         </div>
-                                        <div class="col-12 mb-2">
-                                            <small>กรุณาตรวจสอบข้อมูลของท่านให้ถูกต้อง และกดปุ่ม <span
-                                                    class="text-success">ยืนยันการแจ้งโอนเงิน</span>
-                                            </small>
+                                        <div class="col-12">
+                                            <button class="btn btn-success_bkk btn-block btn-larg confirmdeposit">
+                                                ยืนยันการแจ้งโอนเงิน
+                                            </button>
                                         </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <button class="btn btn-success_bkk btn-block btn-larg confirmdeposit">
-                                            ยืนยันการแจ้งโอนเงิน
-                                        </button>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-            </div>
+                </div>
 
 </form>

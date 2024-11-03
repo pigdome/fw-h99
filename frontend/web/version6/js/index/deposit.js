@@ -1,9 +1,9 @@
-$(document).ready(function() {
+$(document).ready(function () {
     window.localStorage.removeItem('poston');
-    $("#bankselect").change(function() {
+    $("#bankselect").change(function () {
         var banknmm = $(this).val();
         var sps = banknmm.split("-");
-        if(sps[0]!=="blank"){
+        if (sps[0] !== "blank") {
             console.log(sps);
             var banknm = $('#' + sps[0]);
             var acc = banknm.data("acc");
@@ -14,20 +14,20 @@ $(document).ready(function() {
             var bcolor = 'icon-' + sps[0];
             $('.copyacc').attr('data-clipboard-text', acc);
             $('.copyacc').show();
-            $('#bank2').attr("src","//" + window.location.hostname + logoBankUrl + icon);
+            $('#bank2').attr("src", "//" + window.location.hostname + logoBankUrl + icon);
             $('#bank2').css("background-color", color);
             $('#bank2').removeAttr("class");
             $('#bank2').addClass("detail-bank rounded");
             $('#bank2').addClass(bcolor);
             $('#name2').html(name);
             $('#acc2').html(acc);
-            $('#acc2').css("color",color);
+            $('#acc2').css("color", color);
             $('#nameacclang').html('ชื่อบัญชี');
             $("#destep2").show();
             var objDate = new Date();
             var hours = objDate.getHours();
             var minutes = objDate.getMinutes();
-            var time = hours+""+minutes;
+            var time = hours + "" + minutes;
             // if (time>=2255 || time<=5) {
             //     toastr.error(lang.limit_time_deposit, "Error");
             //     $('#btnpayment').prop('disabled', true).html("อยู่นอกเวลาทำการ");
@@ -35,20 +35,20 @@ $(document).ready(function() {
         } else {
             $('#bank2').removeAttr("class");
             $('#bank2').removeAttr("style");
-            $('#bank2').css("color","black");
+            $('#bank2').css("color", "black");
             $('#bank2').addClass("detail-bank table-secondary rounded");
             $('#nameacclang').html('');
             $('#name2').html('');
             $('#acc2').html('กรุณาเลือก บัญชีธนาคาร ของเว็บ RUAYDEE96');
-            $('#bank2').attr("src","//" + window.location.hostname + bankUrl);
-            $('#acc2').css("color","black");
+            $('#bank2').attr("src", "//" + window.location.hostname + bankUrl);
+            $('#acc2').css("color", "black");
             $("#destep2").hide();
             $('.copyacc').hide();
         }
 
     }).trigger('change');
 
-    $("#btnpayment").click(function() {
+    $("#btnpayment").click(function () {
         var money = $('input[name=money]', '#deposit').val();
         if (!money) {
             toastr.error("กรุณาใส่จำนวนเงิน", "Error");
@@ -63,7 +63,7 @@ $(document).ready(function() {
             $("#labelselectbank").html('<i class="fas fa-university"></i> บัญชีของเว็บที่ท่านโอนเงินเข้า');
             var amount = $("#CurrencyInput").val();
             var decimal = $("#decimal").val();
-            if (decimal <= 9){
+            if (decimal <= 9) {
                 var money = amount + '.0' + decimal;
             } else {
                 var money = amount + '.' + decimal;
@@ -112,7 +112,7 @@ function spiderman(s) {
 function countDown(i = 10, str = null, cla = null) {
     var int = setInterval(function () {
         //console.info(i);
-        document.getElementsByClassName(cla)[0].innerText = "กรุณาโอนเงินเข้าบัญชีด้านบนภายใน "+i+" วินาที";
+        document.getElementsByClassName(cla)[0].innerText = "กรุณาโอนเงินเข้าบัญชีด้านบนภายใน " + i + " วินาที";
         if (i < 1) {
             document.getElementsByClassName(cla)[0].innerText = str;
             clearInterval(int);
@@ -137,11 +137,11 @@ function IsJsonString(str) {
     return true;
 }
 
-$('#deposit').on("submit",function(e){
+$('#deposit').on("submit", function (e) {
     e.preventDefault();
     var formData = new FormData($(this)[0]);
     var next = checkvaildpost();
-    if(next===true){
+    if (next === true) {
         $.ajax({
             url: sendDepositUrl,
             cache: false,
@@ -163,8 +163,8 @@ $('#deposit').on("submit",function(e){
                 } else {
                     if (data.result === "success") {
                         toastr.success("ส่งข้อมูลสำเร็จ", "Success");
-                        setTimeout(function() {
-                            window.location.replace(successUrl+'?id='+data.id);
+                        setTimeout(function () {
+                            window.location.replace(successUrl + '?id=' + data.id);
                         }, 1000);
                     } else {
                         if (data.error === 0) {
@@ -191,35 +191,36 @@ $('#deposit').on("submit",function(e){
     }
 });
 
-$("#bordermybank").change(function() {
-    if($("#bordermybank").hasClass("border-danger")){
+$("#bordermybank").change(function () {
+    if ($("#bordermybank").hasClass("border-danger")) {
         $("#bordermybank").removeClass("border-danger");
     }
 });
-$("#borderbankway").change(function() {
-    if($("#borderbankway").hasClass("border-danger")){
+$("#borderbankway").change(function () {
+    if ($("#borderbankway").hasClass("border-danger")) {
         $("#borderbankway").removeClass("border-danger");
     }
 });
-$(".moneyinput").change(function() {
-    if($(".moneyinput").hasClass("border-danger")){
+$(".moneyinput").change(function () {
+    if ($(".moneyinput").hasClass("border-danger")) {
         $(".moneyinput").removeClass("border-danger");
     }
 });
-$("#date").change(function() {
-    if($("#date").hasClass("border-danger")){
+$("#date").change(function () {
+    if ($("#date").hasClass("border-danger")) {
         $("#date").removeClass("border-danger");
     }
 });
 var timeint = null;
 var timehightlight = null;
-function checkvaildpost(){
+function checkvaildpost() {
     var bank = $('select[name=mybank] option:selected', '#deposit').val();
     var svbank = $('select[name=svbank] option:selected', '#deposit').val();
     var channel = $('select[name=channel] option:selected', '#deposit').val();
     var money = $('input[name=money]', '#deposit').val();
     var mydate = $('input[name=date]', '#deposit').val();
     var mytime = $('input[name=time]', '#deposit').val();
+    var evidence = $('input[name=evidence]', '#deposit').val();
     var patterndate = /^([0-9]{2})\/([0-9]{2})\/([0-9]{4})$/;
     var patterntime = /^([0-1][0-9]|2[0-3]):([0-5][0-9])$/;
     var moneys = money.replace(/,/g, '');
@@ -231,16 +232,19 @@ function checkvaildpost(){
     if (svex.length !== 3) {
         toastr.error("Loading Error | checkvaildpost |", "Error");
         return false;
-    }  else if (bank === '') {
+    } else if (bank === '') {
         toastr.error("กรุณาเลือกบัญชีธนาคารของลูกค้า", "Error");
         return false;
-    }else if (!channel) {
+    } else if (!channel) {
         toastr.error("กรุณาเลือกช่องทางการโอนเงิน", "Error");
         return false;
-    } else if (svbank==="blank") {
+    } else if (!evidence) {
+        toastr.error("กรุณาแนบสลิป", "Error");
+        return false;
+    } else if (svbank === "blank") {
         toastr.error("กรุณาเลือกธนาคาร", "Error");
         return false;
-    }  else if (!money) {
+    } else if (!money) {
         toastr.error("กรุณาใส่จำนวนเงิน", "Error");
         $(".moneyinput").addClass("border-danger");
         $(".moneyinput").focus();
@@ -261,16 +265,16 @@ function checkvaildpost(){
     var dt = moment().tz('Asia/Bangkok');
     var d = mydate.split('/');
     var t = mytime.split(':');
-    var mydt = new Date(d[2], d[1]-1, d[0], t[0], t[1], 0);
-    if (dt.valueOf()-mydt.getTime() < 180*1000) {
+    var mydt = new Date(d[2], d[1] - 1, d[0], t[0], t[1], 0);
+    if (dt.valueOf() - mydt.getTime() < 180 * 1000) {
         //console.log('too fast : '+(dt.valueOf()-mydt.getTime()));
         //lang.deposit_too_fast
         // ((dt.getTime()-mydt.getTime())/1000).toFixed(0)
         //console.info(180-((dt.getTime()-mydt.getTime())/1000).toFixed(0));
-        var secdeposit = (180-((dt.valueOf()-mydt.getTime())/1000).toFixed(0));
-        toastr.warning("กรุณารอ "+secdeposit+" วินาที จึงจะสามารถแจ้งโอนได้", "Warning");
+        var secdeposit = (180 - ((dt.valueOf() - mydt.getTime()) / 1000).toFixed(0));
+        toastr.warning("กรุณารอ " + secdeposit + " วินาที จึงจะสามารถแจ้งโอนได้", "Warning");
         clearInterval(timeint);
-        countDown_deposit(secdeposit,"ยืนยันการแจ้งโอนเงิน","confirmdeposit");
+        countDown_deposit(secdeposit, "ยืนยันการแจ้งโอนเงิน", "confirmdeposit");
         return false;
     }
 
@@ -290,11 +294,11 @@ function checkvaildpost(){
 function countDown_deposit(i = 10, str = null) {
     timeint = setInterval(function () {
         //console.info(i);
-        if(!timehightlight){
+        if (!timehightlight) {
             blinking($(".confirmdeposit"));
         }
-        document.getElementsByClassName("confirmdeposit")[0].innerText = "ท่านสามารถแจ้งโอนได้ใน "+i+" วินาที";
-        if($(".confirmdeposit").hasClass("btn-success")){
+        document.getElementsByClassName("confirmdeposit")[0].innerText = "ท่านสามารถแจ้งโอนได้ใน " + i + " วินาที";
+        if ($(".confirmdeposit").hasClass("btn-success")) {
             $(".confirmdeposit").removeClass("btn-success");
             $(".confirmdeposit").addClass("btn-warning");
         }
@@ -302,10 +306,10 @@ function countDown_deposit(i = 10, str = null) {
             document.getElementsByClassName("confirmdeposit")[0].innerText = str;
             clearInterval(timeint);
             clearInterval(timehightlight);
-            if($(".confirmdeposit").hasClass("btn-warning")){
+            if ($(".confirmdeposit").hasClass("btn-warning")) {
                 $(".confirmdeposit").removeClass("btn-warning");
                 $(".confirmdeposit").addClass("btn-success");
-                $(".confirmdeposit").stop(true).fadeTo("slow",1.0);
+                $(".confirmdeposit").stop(true).fadeTo("slow", 1.0);
             }
         }
         i--;

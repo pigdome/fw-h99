@@ -28,7 +28,8 @@ $this->registerCss('
 $this->title = 'Post Credit Transections';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<?php //Pjax::begin(); ?>
+<?php //Pjax::begin(); 
+?>
 
 <div class="col-md-12" style="background-color: #fff;">
     <?php echo $this->render('_search', ['searchModel' => $searchModel, 'type' => $type]); ?>
@@ -96,7 +97,7 @@ $this->params['breadcrumbs'][] = $this->title;
                         if (isset(Constants::$action_commission[$model->action_id])) {
                             $text = Constants::$action_commission[$model->action_id];
                         }
-                    }else {
+                    } else {
                         if (isset(Constants::$action_credit[$model->action_id])) {
                             $text = Constants::$action_credit[$model->action_id];
                         }
@@ -167,11 +168,20 @@ $this->params['breadcrumbs'][] = $this->title;
                 }
             ],
             [
+                'label' => 'Slip',
+                'value' => function ($model) {
+                    if ($model->evidence) {
+                        return '<img src="' . $model->evidence . '" onclick="window.open(this.src,\'_blank\')" width="50px"/>';
+                    }
+                },
+                'format' => 'raw'
+            ],
+            [
                 'header' => 'สถานะ',
                 'format' => 'raw',
                 'value' => function ($model) {
                     $btn = 'btn-default';
-//                                        $text = '';
+                    //                                        $text = '';
                     if (Constants::status_waitting == $model->status) {
                         $btn = 'btn-warning';
                         $text = Constants::$status[Constants::status_waitting];
@@ -192,9 +202,11 @@ $this->params['breadcrumbs'][] = $this->title;
                 'value' => function ($model) {
                     $result = '';
                     if (Constants::status_waitting == $model->status) {
-                        $result .= Html::a(Yii::t('app', ' {modelClass}', [
-                            'modelClass' => 'ดำเนินการ', //Constants::$status[$model->status]
-                        ]), ['post-credit-member/updatestatus', 'id' => $model->id, 'type' => 'approve', 'active' => 'History'],
+                        $result .= Html::a(
+                            Yii::t('app', ' {modelClass}', [
+                                'modelClass' => 'ดำเนินการ', //Constants::$status[$model->status]
+                            ]),
+                            ['post-credit-member/updatestatus', 'id' => $model->id, 'type' => 'approve', 'active' => 'History'],
                             ['onclick' => " $(this).attr('disabled', true)", 'class' => 'btn btn-xs btn-info']
                         );
                         $result .= ' ';
@@ -206,9 +218,11 @@ $this->params['breadcrumbs'][] = $this->title;
 
                     if (Constants::status_waitting == $model->status) {
                         $result .= ' ';
-                        $result .= Html::a(Yii::t('app', ' {modelClass}', [
-                            'modelClass' => 'ลบ', //Constants::$status[$model->status]
-                        ]), ['post-credit-member/updatestatus', 'id' => $model->id, 'type' => 'cancel', 'active' => 'History'],
+                        $result .= Html::a(
+                            Yii::t('app', ' {modelClass}', [
+                                'modelClass' => 'ลบ', //Constants::$status[$model->status]
+                            ]),
+                            ['post-credit-member/updatestatus', 'id' => $model->id, 'type' => 'cancel', 'active' => 'History'],
                             ['onclick' => " $(this).attr('disabled', true)", 'class' => 'btn btn-xs btn-danger']
                         );
                     }

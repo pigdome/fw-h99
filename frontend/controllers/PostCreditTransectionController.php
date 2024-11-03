@@ -189,6 +189,7 @@ class PostCreditTransectionController extends Controller
                 $model->channel = $params['channel'];
                 $model->post_requir_time = $post_requir_time;
                 $model->is_auto = $status === Constants::status_approve ? 1 : 0;
+                $model->evidence = $params['evidence'];
                 if (!$model->save()) {
                     return ['result' => 'can not save post credit transection'];
                 }
