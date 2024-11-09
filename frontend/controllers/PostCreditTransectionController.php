@@ -216,6 +216,11 @@ class PostCreditTransectionController extends Controller
                 $transaction->rollBack();
                 throw $e;
             }
+            try {
+                Constants::notify("แจ้งเตือน: ฝาก/โอนเงินเข้า");
+            } catch (\Exception $e) {
+                return ['result' => $e];
+            }
             return ['result' => 'success', 'id' => $model->id];
         }
         return ['result' => 'not allow method post only'];
@@ -276,6 +281,13 @@ class PostCreditTransectionController extends Controller
 
             try {
                 $model->save();
+
+                try {
+                    Constants::notify("แจ้งเตือน: ถอนเงิน");
+                } catch (\Exception $e) {
+                    return ['result' => $e];
+                }
+
                 return $this->render('create_withdraw', [
                     'user' => $user,
                 ]);
@@ -283,10 +295,6 @@ class PostCreditTransectionController extends Controller
                 return $this->redirect(['withdraw', 'message' => $e]);
                 throw $e;
             }
-
-            if (!$model->save()) {
-            }
-            return $this->render('withdraw_success');
         }
         return $this->render('create_withdraw', [
             'user' => $user,

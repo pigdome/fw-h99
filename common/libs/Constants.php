@@ -266,9 +266,7 @@ class Constants
         self::user_status_active => 'ปกติ',
         self::user_status_withhold => 'ระงับ',
     ];
-    public static $menu_frontend = [
-
-    ];
+    public static $menu_frontend = [];
 
     public static function menuFrontend()
     {
@@ -728,10 +726,10 @@ class Constants
     {
         $ip = getenv('HTTP_CLIENT_IP') ?:
             getenv('HTTP_X_FORWARDED_FOR') ?:
-                getenv('HTTP_X_FORWARDED') ?:
-                    getenv('HTTP_FORWARDED_FOR') ?:
-                        getenv('HTTP_FORWARDED') ?:
-                            getenv('REMOTE_ADDR');
+            getenv('HTTP_X_FORWARDED') ?:
+            getenv('HTTP_FORWARDED_FOR') ?:
+            getenv('HTTP_FORWARDED') ?:
+            getenv('REMOTE_ADDR');
         return $ip;
     }
 
@@ -757,12 +755,25 @@ class Constants
     public static function permute($number)
     {
         $array = is_string($number) ? str_split($number) : $number;
-        if(1 === count($array))
+        if (1 === count($array))
             return $array;
         $result = array();
-        foreach($array as $key => $item)
-            foreach(self::permute(array_diff_key($array, array($key => $item))) as $p)
+        foreach ($array as $key => $item)
+            foreach (self::permute(array_diff_key($array, array($key => $item))) as $p)
                 $result[] = $item . $p;
         return $result;
+    }
+
+    public static function notify($text)
+    {
+        $bot_api_token = '7840375811:AAG-Qa6vlyFstnBaphfAFMd-cG7BkY-IjgY';
+        $chat_id = '-4593520082';
+        $query = http_build_query([
+            'chat_id' => $chat_id,
+            'text' => $text,
+        ]);
+        $url = "https://api.telegram.org/bot{$bot_api_token}/sendMessage?{$query}";
+        $res = file_get_contents($url);
+        return $res;
     }
 }
