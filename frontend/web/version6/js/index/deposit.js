@@ -266,12 +266,13 @@ function checkvaildpost() {
     var d = mydate.split('/');
     var t = mytime.split(':');
     var mydt = new Date(d[2], d[1] - 1, d[0], t[0], t[1], 0);
-    if (dt.valueOf() - mydt.getTime() < 180 * 1000) {
+    var delay_sec = 60;
+    if (dt.valueOf() - mydt.getTime() < delay_sec * 1000) {
         //console.log('too fast : '+(dt.valueOf()-mydt.getTime()));
         //lang.deposit_too_fast
         // ((dt.getTime()-mydt.getTime())/1000).toFixed(0)
         //console.info(180-((dt.getTime()-mydt.getTime())/1000).toFixed(0));
-        var secdeposit = (180 - ((dt.valueOf() - mydt.getTime()) / 1000).toFixed(0));
+        var secdeposit = (delay_sec - ((dt.valueOf() - mydt.getTime()) / 1000).toFixed(0));
         toastr.warning("กรุณารอ " + secdeposit + " วินาที จึงจะสามารถแจ้งโอนได้", "Warning");
         clearInterval(timeint);
         countDown_deposit(secdeposit, "ยืนยันการแจ้งโอนเงิน", "confirmdeposit");
