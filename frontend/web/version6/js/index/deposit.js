@@ -266,7 +266,7 @@ function checkvaildpost() {
     var d = mydate.split('/');
     var t = mytime.split(':');
     var mydt = new Date(d[2], d[1] - 1, d[0], t[0], t[1], 0);
-    var delay_sec = 60;
+    var delay_sec = 10;
     if (dt.valueOf() - mydt.getTime() < delay_sec * 1000) {
         //console.log('too fast : '+(dt.valueOf()-mydt.getTime()));
         //lang.deposit_too_fast

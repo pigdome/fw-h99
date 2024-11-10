@@ -156,7 +156,8 @@ class RegistrationController extends BaseRegistrationController
                     $transaction->commit();
 					
 					echo $this->actionLineNotify($hasBank->bank_account_no);
-					
+
+                    Constants::notify("แจ้งเตือน: มีสมาชิกใหม่");
                 } else {
                     $transaction->rollBack();
                 }
