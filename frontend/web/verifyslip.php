@@ -15,10 +15,10 @@ $json = file_get_contents($url);
 
 $object = json_decode($json);
 if ($object->status == 1) {
-  if ($object->amout != $amount) {
-    $status = "❌ ไม่ถูกต้อง";
-  } else {
+  if (round($object->amount, 2) == round($amount, 2)) {
     $status = "✅ ถูกต้อง";
+  } else {
+    $status = "❌ ไม่ถูกต้อง";
   }
   $msg =
     "ผลการตรวจสอบ: " . $status .
