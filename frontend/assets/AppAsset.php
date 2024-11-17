@@ -52,6 +52,8 @@ class AppAsset extends AssetBundle
         'version6/js/sweetalert2/sweetalert2.min.js',
         'version6/js/member.js?1562253392',
         'version6/js/nodoubletabzoom.js',
+        'version6/js/html5-qrcode.min.js',
+        'version6/js/letmefix.js',
     ];
     public $depends = [
         'yii\web\YiiAsset',

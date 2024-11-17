@@ -1,5 +1,6 @@
 <?php
 /* @var $postCreditTransection \common\models\PostCreditTransection */
+
 use yii\helpers\Url;
 ?>
 <div class="bar-back">
@@ -7,7 +8,7 @@ use yii\helpers\Url;
         <i class="fas fa-chevron-left"></i> หน้าหลัก
     </a>
 </div>
-<div class="p-2 w-100 bg-light main-content align-self-stretch" style="min-height: calc((100vh - 140px) - 50px);">
+<div class="p-2 w-100 bg-light main-content align-self-stretch post-credit-success" style="min-height: calc((100vh - 140px) - 50px);">
     <div class="bgwhitealpha text-secondary shadow-sm rounded p-2 px-2 xtarget col-lotto d-flex flex-row mb-1 pb-0">
         <div class="lotto-title">
             <h4><i class="fas fa-donate"></i> แจ้งเติมเครดิต</h4>
@@ -19,7 +20,7 @@ use yii\helpers\Url;
         <div class="form-row h-auto">
             <div class="col-12 col-sm-12 col-md-12 text-center">
                 <h5 class="font-weight-light text-success mb-0">แจ้งฝากเงิน</h5>
-                <h1 class="font-weight-light text-success totalmoney"><?= number_format($postCreditTransection->amount,2) ?></h1>
+                <h1 class="font-weight-light text-success totalmoney"><?= number_format($postCreditTransection->amount, 2) ?></h1>
                 <span class="badge badge-secondary font-weight-light">เวลาแจ้งโอน</span>
                 <span>
                     <i class="far fa-calendar-check"></i>
@@ -37,14 +38,14 @@ use yii\helpers\Url;
                         <div class="col-12">
                             <div class="row justify-content-center">
                                 <div class="col-3 col-sm-3 col-md-4 col-lg-3 pt-2">
-                                    <img src="<?= Yii::getAlias('@web/bank/') .$postCreditTransection->userHasBankUser->bank->icon ?>"
-                                         style="background-color: <?= $postCreditTransection->createBy->userHasBank->bank->color ?>"
-                                         alt="<?= $postCreditTransection->userHasBankUser->bank->title ?>" width="100%" class="detail-bank rounded mybanklogo">
+                                    <img src="<?= Yii::getAlias('@web/bank/') . $postCreditTransection->userHasBankUser->bank->icon ?>"
+                                        style="background-color: <?= $postCreditTransection->createBy->userHasBank->bank->color ?>"
+                                        alt="<?= $postCreditTransection->userHasBankUser->bank->title ?>" width="100%" class="detail-bank rounded mybanklogo">
                                 </div>
                                 <div class="col-9 col-sm-9 col-md-8 col-lg-5 pt-2">
                                     <h6 class="numacc myaccdeposit"><?= $postCreditTransection->userHasBankUser->bank_account_no ?></h6>
                                     <span class="badge badge-pill badge-secondary font-weight-normal">ชื่อบัญชี</span><br>
-                                    <span class="myname">
+                                    <span class="myname" id="bank_account_name">
                                         <?= $postCreditTransection->userHasBankUser->bank_account_name ?>
                                     </span>
                                 </div>
@@ -62,15 +63,15 @@ use yii\helpers\Url;
                         <div class="col-12">
                             <div class="row justify-content-center">
                                 <div class="col-3 col-sm-3 col-md-4 col-lg-3 pt-2">
-                                    <img src="<?= Yii::getAlias('@web/bank/') .$postCreditTransection->userHasBank->bank->icon ?>"
-                                         alt="<?= $postCreditTransection->userHasBank->bank->title ?>"
-                                         style="background-color: <?= $postCreditTransection->userHasBank->bank->color ?>" width="100%" class="detail-bank rounded svbanklogo">
+                                    <img src="<?= Yii::getAlias('@web/bank/') . $postCreditTransection->userHasBank->bank->icon ?>"
+                                        alt="<?= $postCreditTransection->userHasBank->bank->title ?>"
+                                        style="background-color: <?= $postCreditTransection->userHasBank->bank->color ?>" width="100%" class="detail-bank rounded svbanklogo">
                                 </div>
                                 <div class="col-9 col-sm-9 col-md-8 col-lg-5 pt-2">
                                     <h6 class="numacc svaccdeposit"><?= $postCreditTransection->userHasBank->bank_account_no ?></h6>
                                     <span class="badge badge-pill badge-secondary font-weight-normal">ชื่อบัญชี</span><br>
                                     <span class="svname">
-                                         <?= $postCreditTransection->userHasBank->bank_account_name ?>
+                                        <?= $postCreditTransection->userHasBank->bank_account_name ?>
                                     </span>
                                 </div>
                             </div>
@@ -83,9 +84,33 @@ use yii\helpers\Url;
                 <small class="text-primary"><a href="http://nav.cx/elFpxpL">หากมีปัญหากรุณาติดต่อฝ่าย
                         Support</a></small>
             </div>
-            <button class="btn btn-primary btn-block btn-larg"
-                    onclick="location.href='<?=Url::to(['post-credit-transection/deposit']) ?>';">สถานะการเติมเงิน
+            <button type="button" class="btn btn-primary btn-block btn-larg" data-toggle="modal" data-target="#slipmodal">
+                ดูสลิป
             </button>
+
+            <button class="btn btn-primary btn-block btn-larg"
+                onclick="location.href='<?= Url::to(['post-credit-transection/deposit']) ?>';">สถานะการเติมเงิน
+            </button>
+        </div>
+    </div>
+</div>
+<div style="width: 500px" id="reader"></div>
+
+<div class="modal" tabindex="-1" id="slipmodal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">สสิปรายการ</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" style="margin:auto">
+                <img src="<?= $postCreditTransection->evidence ?>" width="300px" id="slipimage">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
         </div>
     </div>
 </div>
