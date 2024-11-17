@@ -37,7 +37,7 @@ function base64ImageToBlob(str) {
     return blob;
 }
 
-function verifySlip(imageBase64, bankAccountName) {
+function verifySlip(imageBase64, ref1, amount) {
     var imageBlob = base64ImageToBlob(imageBase64);
 
     const html5QrCode = new Html5Qrcode("reader");
@@ -45,14 +45,14 @@ function verifySlip(imageBase64, bankAccountName) {
 
     html5QrCode.scanFile(imageFile, false)
         .then(qrCodeMessage => {
-            tmwVerify(qrCodeMessage, bankAccountName);
+            tmwVerify(qrCodeMessage, ref1, amount);
         })
         .catch(err => {
             console.log(`Error scanning file. Reason: ${err}`)
         });
 }
 
-function tmwVerify(QRCode, bankAccountName) {
+function tmwVerify(QRCode, ref1, amount) {
     const requestOptions = {
         method: "GET",
         redirect: "follow"
@@ -60,7 +60,8 @@ function tmwVerify(QRCode, bankAccountName) {
 
     var params = new URLSearchParams({
         qrcode: QRCode,
-        ref1: bankAccountName
+        ref1: ref1,
+        amount: amount
     });
 
     url = "/frontend/web/verifyslip.php";
@@ -78,13 +79,18 @@ function tmwVerify(QRCode, bankAccountName) {
 
 if ($(".post-credit-success").length > 0) {
     var myImage = document.getElementById("slipimage");
+    var amount = document.getElementById("amount").textContent;
+
+    var bankAccountNo = $("#bank_account_no").text().trim();
     var bankAccountName = $("#bank_account_name").text().trim();
+
+    var ref1 = bankAccountNo + ":" + amount;
 
     toDataURL(myImage.src, function (dataURL) {
         console.log(dataURL);
         console.log(myImage.naturalWidth);
         console.log(myImage.naturalHeight);
 
-        verifySlip(dataURL, bankAccountName);
+        verifySlip(dataURL, ref1, amount);
     });
 }

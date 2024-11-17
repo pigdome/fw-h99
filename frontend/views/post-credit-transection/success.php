@@ -20,7 +20,7 @@ use yii\helpers\Url;
         <div class="form-row h-auto">
             <div class="col-12 col-sm-12 col-md-12 text-center">
                 <h5 class="font-weight-light text-success mb-0">แจ้งฝากเงิน</h5>
-                <h1 class="font-weight-light text-success totalmoney"><?= number_format($postCreditTransection->amount, 2) ?></h1>
+                <h1 class="font-weight-light text-success totalmoney" id="amount"><?= number_format($postCreditTransection->amount, 2) ?></h1>
                 <span class="badge badge-secondary font-weight-light">เวลาแจ้งโอน</span>
                 <span>
                     <i class="far fa-calendar-check"></i>
@@ -43,7 +43,7 @@ use yii\helpers\Url;
                                         alt="<?= $postCreditTransection->userHasBankUser->bank->title ?>" width="100%" class="detail-bank rounded mybanklogo">
                                 </div>
                                 <div class="col-9 col-sm-9 col-md-8 col-lg-5 pt-2">
-                                    <h6 class="numacc myaccdeposit"><?= $postCreditTransection->userHasBankUser->bank_account_no ?></h6>
+                                    <h6 class="numacc myaccdeposit" id="bank_account_no"><?= $postCreditTransection->userHasBankUser->bank_account_no ?></h6>
                                     <span class="badge badge-pill badge-secondary font-weight-normal">ชื่อบัญชี</span><br>
                                     <span class="myname" id="bank_account_name">
                                         <?= $postCreditTransection->userHasBankUser->bank_account_name ?>
