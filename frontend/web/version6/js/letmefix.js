@@ -37,22 +37,22 @@ function base64ImageToBlob(str) {
     return blob;
 }
 
-function verifySlip(imageBase64, ref1, amount) {
-    var imageBlob = base64ImageToBlob(imageBase64);
+function verifyCredit(slip_code, ref1, credit_id) {
+    var imageBlob = base64ImageToBlob(slip_code);
 
     const html5QrCode = new Html5Qrcode("reader");
     const imageFile = imageBlob;
 
     html5QrCode.scanFile(imageFile, false)
         .then(qrCodeMessage => {
-            tmwVerify(qrCodeMessage, ref1, amount);
+            tmwVerify(qrCodeMessage, ref1, credit_id);
         })
         .catch(err => {
             console.log(`Error scanning file. Reason: ${err}`)
         });
 }
 
-function tmwVerify(QRCode, ref1, amount) {
+function tmwVerify(QRCode, ref1, credit_id) {
     const requestOptions = {
         method: "GET",
         redirect: "follow"
@@ -61,7 +61,6 @@ function tmwVerify(QRCode, ref1, amount) {
     var params = new URLSearchParams({
         qrcode: QRCode,
         ref1: ref1,
-        amount: amount
     });
 
     url = "/frontend/web/verifyslip.php";
@@ -71,9 +70,32 @@ function tmwVerify(QRCode, ref1, amount) {
     $.ajax({ "url": url, "method": "GET" }).done(function (response) {
         if (response.status == 1) {
             msg = "ผลการตรวจสอบสลิป: " + response.msg + "\nเวลา : " + response.slip_time;
-            alert(msg);
+
+            url_approve = "/credit/approve-credit";
+            var params = new URLSearchParams({
+                credit_id: credit_id,
+                amount: response.amount
+            });
+            url_approve = url_approve + "?" + params.toString();
+            $.ajax({ "url": url_approve, "method": "GET" }).done(function (status) {
+                if (status == "ok") {
+                    msg = msg + "\nทำรายการสำเร็จ";
+                    alert(msg);
+                    window.location = '/post-credit-transection/deposit';
+                }
+                else {
+                    msg = msg + "\nทำรายการไม่สำเร็จ";
+                    msg = msg + "\n" + status;
+                    alert(msg);
+                }
+            });
         }
     });
+}
+
+function getUrlParams(key) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(key);
 }
 
 
@@ -84,13 +106,11 @@ if ($(".post-credit-success").length > 0) {
     var bankAccountNo = $("#bank_account_no").text().trim();
     var bankAccountName = $("#bank_account_name").text().trim();
 
-    var ref1 = bankAccountNo + ":" + amount;
+    var credit_id = getUrlParams('id');
 
-    toDataURL(myImage.src, function (dataURL) {
-        console.log(dataURL);
-        console.log(myImage.naturalWidth);
-        console.log(myImage.naturalHeight);
+    var ref1 = bankAccountNo + ":" + credit_id;
 
-        verifySlip(dataURL, ref1, amount);
+    toDataURL(myImage.src, function (slip_code) {
+        verifyCredit(slip_code, ref1, credit_id);
     });
 }
