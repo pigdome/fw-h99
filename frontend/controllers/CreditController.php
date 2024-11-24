@@ -82,6 +82,7 @@ class CreditController extends Controller
         // try catch?
         Credit::creditWalk($requestModel->action_id, $requestModel->poster_id, $admin_id, $reason_id, $requestModel->amount);
 
+        Constants::notify("ตัดเงินสำเร็จ");
         return "ok";
     }
 }
