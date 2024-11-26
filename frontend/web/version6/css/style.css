@@ -432,7 +432,7 @@ h6 {
 }
 
 .modal-header.bg-danger {
-    background: rgb(189,3,3) !important;
+    background: rgb(189, 3, 3) !important;
 }
 
 .border-active {
@@ -6491,6 +6491,7 @@ a:hover .livebtn {
     .carousel-view {
         display: block;
     }
+
     .pc-view {
         display: none !important;
     }
