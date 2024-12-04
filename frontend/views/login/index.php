@@ -58,7 +58,7 @@ $this->registerJs($localStorageJs);
 
             <div class="col-lg pt-2 pc-view text-center">
                 <a href="https://lin.ee/cDWNdUL" target="_blank">
-                    <img src="<?= Yii::getAlias('@web/version6/images/ads-bar-01.jpg') ?>" width="100%" height="auto" class="img-responsive"></a>
+                    <img src="<?= Yii::getAlias('@web/version6/images/banner.png') ?>" width="100%" height="auto" class="img-responsive"></a>
             </div>
 
             <div class="bglogin p-2">
@@ -66,7 +66,7 @@ $this->registerJs($localStorageJs);
                     <div class="col-sm-12 col-md-4 col-lg-3">
                         <div class="indexlogo">
                             <div class="logoindex"><img
-                                    src="<?= Yii::getAlias('@web/version6/images/demolotto.png') ?>"
+                                    src="<?= Yii::getAlias('@web/version6/images/logo.png') ?>"
                                     style="height: 60px;"
                                     alt="Huay99"
                                     title="Huay99" /></div>
@@ -210,14 +210,14 @@ $this->registerJs($localStorageJs);
                 <div class="col-sm-12 col-md-6 col-lg-6 mb-2 px-1">
                     <div class="bgwhitealpha blue shadow-sm rounded p-2 h-100">
                         <a href="****" target="_blank">
-                            <img src="<?= Yii::getAlias('@web/version6/images/ads-banner-01.jpg') ?>" width="100%" height="auto" class="img-responsive">
+                            <img src="<?= Yii::getAlias('@web/version6/images/ads-banner-01.png') ?>" width="100%" height="auto" class="img-responsive">
                         </a>
                     </div>
                 </div>
                 <div class="col-sm-12 col-md-6 col-lg-6 mb-2 px-1">
                     <div class="bgwhitealpha blue shadow-sm rounded p-2 h-100">
                         <a href="****" target="_blank">
-                            <img src="<?= Yii::getAlias('@web/version6/images/ads-banner-02.jpg') ?>" width="100%" height="auto" class="img-responsive">
+                            <img src="<?= Yii::getAlias('@web/version6/images/ads-banner-02.png') ?>" width="100%" height="auto" class="img-responsive">
                         </a>
                     </div>
                 </div>

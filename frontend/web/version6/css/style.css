@@ -100,8 +100,8 @@ body {
     z-index: -1;
     top: 0;
     left: 0;
-    /*background: url(../images/bg-black.jpg) no-repeat top center;*/
-    background-image: linear-gradient(to right, #040406, #920505, #040406);
+    background: url(../images/bg-main.jpg) no-repeat top center;
+    /* background-image: linear-gradient(to right, #040406, #920505, #040406); */
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -182,7 +182,7 @@ h6 {
 .navbar {
     width: 100%;
     height: auto;
-    background-image: linear-gradient(to right, #040406, #920505, #dd0101, #800707, #040406);
+    background-image: linear-gradient(to right, #040406, #1237a1, #1873d3, #1237a1, #040406);
     color: white;
     padding: 8px 0;
 }
@@ -350,7 +350,7 @@ h6 {
 
 .bgwhitealpha.blue {
     /* background: rgba(179, 227, 236, 0.6); */
-    background: #970606;
+    background: #151755;
     margin-bottom: 10px;
     border: 1px solid #000;
 }
@@ -366,7 +366,7 @@ h6 {
 }
 
 .text-blue {
-    color: #970606;
+    color: #151755;
 }
 
 .bgwhitealpha h6 {
@@ -502,12 +502,12 @@ h6 {
     border-bottom: none;
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
-    box-shadow: #c70303 0 0 3px;
+    box-shadow: #00017a 0 0 3px;
     margin-top: 10px;
 }
 
 .bglogin .form-control {
-    background-color: #a80303;
+    background-color: #1237a1;
     /* border: 1px solid #ffffff; */
     color: #fff !important;
 }
@@ -529,8 +529,8 @@ h6 {
 
 .bglogin .btn-danger_bkk {
     color: #FFFFFF;
-    background-color: #a80303;
-    border-color: #a80303;
+    background-color: #1237a1;
+    border-color: #1237a1;
 }
 
 .border-gold {
@@ -586,13 +586,14 @@ h6 {
 
 
 .subbglogin {
-    background-image: linear-gradient(to right, #000000, #8f0606, #d80606, #8f0606, #000000);
+    /* background-image: linear-gradient(to right, #000000, #8f0606, #d80606, #8f0606, #000000); */
+    background-image: linear-gradient(to right, #040406, #00017a, #1237a1, #1873d3, #040406);
     border-radius: 5px;
     border: transparent 2px solid;
     border-top: transparent 1px solid;
     border-top-left-radius: 0px;
     border-top-right-radius: 0px;
-    box-shadow: #c70303 0 0 3px;
+    box-shadow: #00017a 0 0 3px;
     margin-bottom: 10px;
     vertical-align: middle;
 
@@ -696,7 +697,7 @@ footer.bg-danger div.footer-copyright {
 }
 
 footer.bg-danger {
-    background-image: linear-gradient(to right, #040406, #920505, #dd0101, #800707, #040406);
+    background-image: linear-gradient(to right, #040406, #00017a, #1237a1, #1873d3, #040406);
 }
 
 #footer-member.bg-danger div.footer-copyright a {
@@ -1872,7 +1873,7 @@ a.menu-grid.disabled {
 }
 
 .text-blue-2 {
-    color: #970606 !important;
+    color: #151755 !important;
 }
 
 .bg-blue-2 {
