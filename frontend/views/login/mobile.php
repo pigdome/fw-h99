@@ -17,7 +17,7 @@ use yii\widgets\ActiveForm;
           media="all"/>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width"/>
-    <title>HUAY99</title>
+    <title>รวยหวย95.com</title>
     <link href="<?= Yii::getAlias('@web/theme-login/css/ss26092018.css?ver=5') ?>" rel="stylesheet"/>
 
     <!--JS-->
@@ -111,7 +111,7 @@ use yii\widgets\ActiveForm;
     <div class="footer">
         </br>
         <div class="copyright">
-            <p>© 2024 HUAY99 - All Rights Reserved.</p><br/><br/><br/><br/><br/>
+            <p>© 2024 รวยหวย95.com - All Rights Reserved.</p><br/><br/><br/><br/><br/>
         </div>
     </div>
     <div class="footer-nav">

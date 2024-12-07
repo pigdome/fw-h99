@@ -1,5 +1,5 @@
 <?php
-echo $curr = date("Y-m-d H:i:s");
+// echo $curr = date("Y-m-d H:i:s");
 /* @var $thaiLotterys array */
 /* @var $now string */
 /* @var $foreignLotterys array */
@@ -43,7 +43,7 @@ $this->registerJs($localStorageJs);
                 <div class="notice-bar flex-fill">
                     <div class="txt-notice">
                         <ul id="marquee1" class="marquee">
-                            <li>&nbsp;ยินดีต้อนรับทุกท่านเข้าสู่เว็บ Huay99.online
+                            <li>&nbsp;ยินดีต้อนรับทุกท่านเข้าสู่เว็บ รวยหวย95.com
                                 เว็บหวยออนไลน์ที่มาแรงที่สุดในตอนนี้
                             </li>
                         </ul>
@@ -61,6 +61,29 @@ $this->registerJs($localStorageJs);
                     <img src="<?= Yii::getAlias('@web/version6/images/banner.png') ?>" width="100%" height="auto" class="img-responsive"></a>
             </div>
 
+            <div id="slider" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img class="d-block w-100" src="/version6/images/slider-01.png" alt="First slide">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="/version6/images/slider-02.png" alt="Second slide">
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+
             <div class="bglogin p-2">
                 <div class="row">
                     <div class="col-sm-12 col-md-4 col-lg-3">
@@ -68,8 +91,8 @@ $this->registerJs($localStorageJs);
                             <div class="logoindex"><img
                                     src="<?= Yii::getAlias('@web/version6/images/logo.png') ?>"
                                     style="height: 60px;"
-                                    alt="Huay99"
-                                    title="Huay99" /></div>
+                                    alt="รวยหวย95.com"
+                                    title="รวยหวย95.com" /></div>
                         </div><br>
                     </div>
                     <div class="col-sm-12 col-md-8 col-lg-9">
@@ -700,7 +723,7 @@ $this->registerJs($localStorageJs);
 <footer class="page-footer font-small bg-danger pt-1 mt-5">
     <!-- Copyright -->
     <div class="footer-copyright text-center py-3">© 2024 Copyright -
-        <a href="<?= \yii\helpers\Url::to(['site/index']) ?>"> Huay99.online</a>
+        <a href="<?= \yii\helpers\Url::to(['site/index']) ?>">รวยหวย95.com</a>
     </div>
     <!-- Copyright -->
 </footer>
@@ -742,6 +765,10 @@ $(function () {
                 "showMethod": "show",
                 "hideMethod": "hide"
             };
+        });
+
+        $('#slider').carousel({
+            interval: 2000
         });
     });
 EOT;

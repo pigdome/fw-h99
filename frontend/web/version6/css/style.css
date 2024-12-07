@@ -716,7 +716,8 @@ footer.bg-danger {
 }
 
 #footer-member.bg-danger {
-    background-image: linear-gradient(to right, #040406, #920505, #dd0101, #800707, #040406);
+    /* background-image: linear-gradient(to right, #040406, #920505, #dd0101, #800707, #040406); */
+    background-image: linear-gradient(50deg, #8f6306, #DAA520, #DAA520, #8f6306);
 }
 
 #footer-member .footer-copyright a {
@@ -6744,4 +6745,8 @@ a:hover .livebtn {
     100% {
         background-position: 0 0;
     }
+}
+
+#loginbox #slider {
+    padding: 15px;
 }

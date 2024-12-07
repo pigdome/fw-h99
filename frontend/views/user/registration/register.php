@@ -15,7 +15,7 @@ use yii\helpers\Url;
                         <ul id="marquee1" class="marquee">
                             <li class="marquee-showing" style="top: 0px; left: 0px;">
                                 &nbsp;ยินดีต้อนรับทุกท่านเข้าสู่เว็บ
-                                Huay99.online เว็บหวยออนไลน์ที่มาแรงที่สุดในตอนนี้
+                                รวยหวย95.com เว็บหวยออนไลน์ที่มาแรงที่สุดในตอนนี้
                             </li>
                         </ul>
                     </div>
@@ -31,7 +31,7 @@ use yii\helpers\Url;
                         <div class="logoindex text-center">
                             <a href="#">
                                 <img src="<?= Yii::getAlias('@web/version6/images/demolotto.png') ?>"
-                                    class="position-relative" style="top:-10px" alt="HUAY99" title="HUAY99"></a>
+                                    class="position-relative" style="top:-10px" alt="รวยหวย95.com" title="รวยหวย95.com"></a>
                         </div>
                     </div>
                 </div> 
@@ -185,7 +185,7 @@ use yii\helpers\Url;
     <footer id="footer-member" class="page-footer font-small bg-danger pt-1 mt-5 fixed-bottom pc-view">
 
         <div class="footer-copyright text-center  py-3">© 2024 Copyright -
-            <a href="#" class=""> Huay99.online</a>
+            <a href="#" class="">รวยหวย95.com</a>
         </div>
 
     </footer>

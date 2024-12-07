@@ -9,7 +9,7 @@
             </div>
             <div class="modal-body">
                 <h3><strong>จับยี่กี่ รอบที่ <?= $yeekeeGame->round ?></strong></h3>
-                <p>จับยี่กี่ รอบที่ <?= $yeekeeGame->round ?> กติกาการเเทง&nbsp;<strong>HUAY99</strong></p>
+                <p>จับยี่กี่ รอบที่ <?= $yeekeeGame->round ?> กติกาการเเทง&nbsp;<strong>รวยหวย95.com</strong></p>
                 <?= $game->rule ?>
             </div>
             <div class="modal-footer">

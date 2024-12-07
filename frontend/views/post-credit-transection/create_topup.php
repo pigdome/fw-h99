@@ -53,7 +53,7 @@ $this->registerJs($js);
                         <div class="col-12">
                             <h6 class="font-weight-normal">
                                 <span class="badge badge-pill badge-success font-weight-normal">STEP 1</span>
-                                บัญชีธนาคาร Huay99.online
+                                บัญชีธนาคาร รวยหวย95.com
                             </h6>
                         </div>
                         <div class="col-12">
@@ -94,7 +94,7 @@ $this->registerJs($js);
                                                 </div>
                                                 <div class="col-9 col-sm-9 col-md-8 col-lg-5 p-2 d-flex flex-column justify-content-center align-items-start">
                                                     <h6 class="numacc" id="acc2" style="color: black;">กรุณาเลือก
-                                                        บัญชีธนาคาร ของเว็บ Huay99.online</h6>
+                                                        บัญชีธนาคาร ของเว็บ รวยหวย95.com</h6>
                                                     <span class="badge badge-pill badge-secondary font-weight-normal"
                                                         id="nameacclang"></span>
 
@@ -146,7 +146,7 @@ $this->registerJs($js);
                                         โอนขั้นต่ำ "ครั้งละ 20 บาท" ถ้าโอนต่ำกว่า 20 บาทเงินของท่านจะไม่เข้าระบบ
                                         และไม่สามารถคืนได้
                                     </div>
-                                    <div class="alert alert-warning">คำเตือน! กรุณาใช้บัญชีที่ท่านผูกกับ Huay99.online
+                                    <div class="alert alert-warning">คำเตือน! กรุณาใช้บัญชีที่ท่านผูกกับ รวยหวย95.com
                                         ในการโอนเงินเท่านั้น
                                     </div>
                                     <div class="alert alert-info">

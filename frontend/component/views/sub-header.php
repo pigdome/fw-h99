@@ -10,17 +10,17 @@ use yii\helpers\Url;
         <div class="container">
             <div class="d-flex justify-content-between align-items-center">
                 <div class="d-flex align-items-center">
-                    <a href="<?= Url::to(['site/home'])?>" title="covidlotto">
+                    <a href="<?= Url::to(['site/home']) ?>" title="covidlotto">
                         <div class="memberlogo">
                             <div class="logomember">
                                 <a href="<?= Url::to(['site/home']) ?>">
-                                    <img src="<?= Yii::getAlias('@web/version6/images/demolotto.png') ?>"
-                                         style="height: 45px; position: relative; top: -10px; left: -10px;"
-                                         alt="FIFALOTTO.COM" title="FIFALOTTO" id="logofull"/>
+                                    <img src="<?= Yii::getAlias('@web/version6/images/logo.png') ?>"
+                                        style="height: 45px; position: relative; top: -10px; left: -10px;"
+                                        alt="FIFALOTTO.COM" title="FIFALOTTO" id="logofull" />
                                 </a>
                                 <a href="<?= Url::to(['site/home']) ?>">
                                     <img src="<?= Yii::getAlias('@web/version6/images/icon-lottovip-64.jpg') ?>"
-                                         alt="FIFALOTTO.COM" title="FIFALOTTO" id="logosymbol"/>
+                                        alt="FIFALOTTO.COM" title="FIFALOTTO" id="logosymbol" />
                                 </a>
                             </div>
                         </div>
@@ -30,18 +30,18 @@ use yii\helpers\Url;
                 <div class="d-flex flex-row justify-content-between align-items-center">
                     <div id="menu-pc" class="d-flex justify-content-between align-items-center pc-view">
                         <a href="<?= Url::to(['site/home']) ?>" data-toggle="tooltip"
-                           data-placement="top"
-                           title="หน้าแรก" data-id="lotto">
+                            data-placement="top"
+                            title="หน้าแรก" data-id="lotto">
                             <i class="sn-icon sn-icon--home2"></i>
                         </a>
                         <a href="<?= Url::to(['post-credit-transection/create-topup']) ?>" data-toggle="tooltip"
-                           data-placement="top"
-                           title="เติมเงิน" data-id="refill">
+                            data-placement="top"
+                            title="เติมเงิน" data-id="refill">
                             <i class="fas fa-wallet"></i>
                         </a>
                         <a href="<?= Url::to(['lotto/report']) ?>" data-toggle="tooltip"
-                           data-placement="top"
-                           title="ผลรางวัล" data-id="award">
+                            data-placement="top"
+                            title="ผลรางวัล" data-id="award">
                             <i class="fas fa-award"></i>
                         </a>
 
@@ -57,26 +57,26 @@ use yii\helpers\Url;
 
                     <div id="sidebarCollapse" class="mobile-view">
                         <img src="<?= Yii::getAlias('@web/version6/images/user-128.png') ?>"
-                             onerror="this.src='<?= Yii::getAlias('@web/version6/images/user-128.png') ?>'"
-                             alt=""
-                             class="rounded-circle ml-1" width="28" height="28" title="บัญชีผู้ใช้">
+                            onerror="this.src='<?= Yii::getAlias('@web/version6/images/user-128.png') ?>'"
+                            alt=""
+                            class="rounded-circle ml-1" width="28" height="28" title="บัญชีผู้ใช้">
                         <i class="fas fa-ellipsis-v"></i>
                     </div>
 
                     <div class="dropdown pc-view ml-1">
                         <div class="dropdown-toggle" id="menu-profile" data-toggle="dropdown"
-                             aria-haspopup="true"
-                             aria-expanded="true">
+                            aria-haspopup="true"
+                            aria-expanded="true">
                             <img src="<?= Yii::getAlias('@web/version6/images/user-128.png') ?>"
-                                 onerror="this.src='<?= Yii::getAlias('@web/version6/images/user-128.png') ?>'"
-                                 alt=""
-                                 class="rounded-circle" width="40" height="35"> <span
-                                    id="username"><?= Yii::$app->user->identity->username ?></span>
+                                onerror="this.src='<?= Yii::getAlias('@web/version6/images/user-128.png') ?>'"
+                                alt=""
+                                class="rounded-circle" width="40" height="35"> <span
+                                id="username"><?= Yii::$app->user->identity->username ?></span>
                         </div>
                         <div class="dropdown-menu" aria-labelledby="menu-profile"
-                             id="menu-profile-dropdown">
+                            id="menu-profile-dropdown">
                             <a class="dropdown-item"
-                               href="<?= Url::to(['info/user']) ?>">
+                                href="<?= Url::to(['info/user']) ?>">
                                 <i class="fas fa-user-cog"></i> ตั้งค่าบัญชีผู้ใช้ </a>
                             <a class="dropdown-item" href="<?= Url::to(['setting/bank']) ?>">
                                 <i class="fas fa-money-check"></i> บัญชีธนาคาร </a>
@@ -106,7 +106,7 @@ use yii\helpers\Url;
             <div class="notice-bar flex-fill">
                 <div class="txt-notice">
                     <ul id="marquee1" class="marquee">
-                        <li>&nbsp;ยินดีต้อนรับทุกท่านเข้าสู่เว็บ HUAY178 เว็บหวยออนไลน์ที่มาแรงที่สุดในตอนนี้</li>
+                        <li>&nbsp;ยินดีต้อนรับทุกท่านเข้าสู่เว็บ รวยหวย95.com เว็บหวยออนไลน์ที่มาแรงที่สุดในตอนนี้</li>
                     </ul>
                 </div>
             </div>

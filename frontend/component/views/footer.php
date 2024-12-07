@@ -1,7 +1,7 @@
 <footer id="footer-member" class="page-footer font-small bg-danger pt-1 mt-5 fixed-bottom pc-view">
     <!-- Copyright -->
     <div class="footer-copyright text-center  py-3">© 2024 Copyright -
-        <a href="<?= \yii\helpers\Url::to(['site/index'])?>" class="text-blue-2"> HUAY178.online</a>
+        <a href="<?= \yii\helpers\Url::to(['site/index'])?>" class="text-blue-2"> รวยหวย95.com</a>
     </div>
     <!-- Copyright -->
 </footer>
